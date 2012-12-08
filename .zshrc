@@ -91,6 +91,7 @@ alias l='ls -lAgs | less -r'
 alias less='/usr/bin/less'
 alias la='ls -A'
 alias ll='ls -l'
+alias emacs='emacs -nw'
 alias sl='ls'
 alias gdb='emacs -f gdb'
 
