@@ -61,6 +61,10 @@
   (color-theme-initialize)
   (color-theme-hober))
 
+;; 対応する括弧をハイライト
+
+
+
 (load "coding.el")
 (load "coding-style.el")
 (load "skk-setting.el")
