@@ -62,8 +62,7 @@
   (color-theme-hober))
 
 ;; 対応する括弧をハイライト
-
-
+(show-paren-mode t)
 
 (load "coding.el")
 (load "coding-style.el")
