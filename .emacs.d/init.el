@@ -3,8 +3,21 @@
 ;;; (setq debug-on-error t)
 
 ;;; add load-path
-(setq load-path (cons "~/.emacs.d/elisp" load-path))
-(setq load-path (cons "~/.emacs.d/elisp/color-theme-6.6.0" load-path))
+(setq load-path
+      (append
+       (list
+        (expand-file-name "~/.emacs.d/")
+        (expand-file-name "~/.emacs.d/elisp/")
+        (expand-file-name "~/.emacs.d/elisp/color-theme-6.6.0/")
+        )
+       load-path))
+
+(require 'init-loader)
+(init-loader-load "~/.emacs.d/inits")
+
+;; install-elisp の設定
+(require 'install-elisp)
+(setq install-elisp-repository-directory "~/.emacs.d/elisp/")
 
 ;;============iswitchb-mode========================================
 ;; バッファの切り替えを強化する
@@ -17,39 +30,14 @@
 (setq iswitchb-prompt-newbuffer nil)
 ;;============iswitchb-mode=======================================
 
-;; If Teriminal, Menu bar disable
-(when (eq window-system 'nil)
-  (menu-bar-mode 0))
-
 ;; C-k で改行までkillする
 (setq kill-whole-line t)
 
-;; scratchのコメントを表示させない
-(setq initial-scratch-message nil)
 
 ;; 
 (if (not (<= emacs-major-version 23))
     (setq inhibit-startup-message t)
   (setq inhibit-startup-screen t))
-
-;; モードラインに時刻を表示する
-(display-time)
-
-;; 行番号・桁番号を表示される
-(line-number-mode t)
-(column-number-mode t)
-
-;; ファイルサイズを表示するl
-(size-indication-mode t)
-
-;; GCを減らして軽くする (デフォルトの10倍)
-(setq gc-cons-threshold (* 10 gc-cons-threshold))
-
-;; ctrl-h backspace
-(keyboard-translate ?\C-h ?\C-?)
-
-;; 改行時にインデントを行う
-(global-set-key (kbd "C-m") 'newline-and-indent)
 
 ;; TABの表示幅4
 (setq-default tab-width 4)
@@ -67,3 +55,5 @@
 (load "coding.el")
 (load "coding-style.el")
 (load "skk-setting.el")
+(load "my-ruby.el")
+
