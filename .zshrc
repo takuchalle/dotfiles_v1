@@ -17,37 +17,31 @@ autoload -U colors;
 colors
 
 #
-# Git
+# Left Prompt
 #
-_set_env_git_current_branch() {
-  GIT_CURRENT_BRANCH=$( git branch &> /dev/null | grep '^\*' | cut -b 3- )
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-chenges true
+function _update_vcs_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _update_vcs_info_msg
+local p_git="%1(v|%1v|)"
 
-_update_rprompt () {
-  if [ "`git ls-files 2>/dev/null`" ]; then
-    RPROMPT="($GIT_CURRENT_BRANCH) [%h](%T)"
-  else
-    RPROMPT="[%h](%T)"
-  fi
-} 
-  
-precmd() 
-{ 
-  _set_env_git_current_branch
-  _update_rprompt
-}
-
-chpwd()
-{
-  _set_env_git_current_branch
-  _update_rprompt
-}
+local p_cdir="%B%F{red}%n@%m%f [%~]%b $p_git"$'\n'
+local p_mark="%(?,%F{white},%F{blue})$%f"
+PROMPT="$p_cdir$p_mark "
 
 #
-# Prompt
+# Right Prompt
 #
-PROMPT="%{[31m%}%m[%~]%%%{[m%} "
-#RPROMPT='[%h] (%t)'
+local p_info="[%h](%T)"
+RPROMPT="$p_info"
+
+
 
 # key bind
 #
