@@ -33,6 +33,8 @@
 ;; C-k で改行までkillする
 (setq kill-whole-line t)
 
+;; C-u で別のウィンドウに移動
+(global-set-key "\C-u" 'other-window)
 
 ;; 
 (if (not (<= emacs-major-version 23))
