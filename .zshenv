@@ -1,3 +1,7 @@
 export EDITOR="emacs -nw"
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+
+# rbenv があるときのみ実行
+if [ -x "`which rbenv`" ]; then
+    eval "$(rbenv init -)"
+fi
