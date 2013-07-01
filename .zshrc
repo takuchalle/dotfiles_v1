@@ -1,13 +1,21 @@
 #
 # Shell Variables
 #
+setopt auto_cd
+setopt correct
+setopt no_beep
+
+#
+# History
+#
 SAVEHIST=100000
 HISTSIZE=100000
 HISTFILE=~/.zhistory
-#SHELL=/bin/zsh
-
+setopt bang_hist
+setopt extended_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
+setopt hist_reduce_blanks
 setopt share_history
 
 #
@@ -64,6 +72,7 @@ setopt ignore_eof
 setopt notify
 setopt auto_list
 setopt nobeep
+setopt auto_cd
 setopt auto_pushd
 
 #
@@ -71,7 +80,12 @@ setopt auto_pushd
 #
 autoload -U compinit
 compinit
-setopt auto_pushd 
+setopt auto_list
+setopt auto_menu
+setopt list_packed
+setopt list_types
+bindkey "^[[Z" reverse-menu-complete
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 compctl -c man which
 compctl -g '*.tex' platex jlatex
 compctl -g '*.dvi' xdvi dvi2ps
