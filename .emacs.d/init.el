@@ -9,6 +9,7 @@
         (expand-file-name "~/.emacs.d/")
         (expand-file-name "~/.emacs.d/elisp/")
         (expand-file-name "~/.emacs.d/elisp/color-theme-6.6.0/")
+        (expand-file-name "~/.emacs.d/elisp/auto-complete/")
         )
        load-path))
 
