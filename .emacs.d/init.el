@@ -55,16 +55,6 @@
 ;; インデントでタブ文字を使用する
 (setq-default indent-tabs-mode t)
 
-;; 色の設定
-(when (require 'color-theme nil t)
-  (color-theme-initialize)
-  (color-theme-hober))
-
-;; 対応する括弧をハイライト
-(show-paren-mode t)
-
-(load "coding.el")
 (load "coding-style.el")
 (load "skk-setting.el")
 (load "my-ruby.el")
-
