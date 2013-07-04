@@ -15,7 +15,7 @@
 (line-number-mode t)
 (column-number-mode t)
 
-;; ファイルサイズを表示するl
+;; ファイルサイズを表示する
 (size-indication-mode t)
 
 ;; GCを減らして軽くする (デフォルトの10倍)
@@ -35,6 +35,13 @@
 (setq backup-directory-alist
       (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/.backup"))
             backup-directory-alist))
+
+;; "#!" から始まるファイルを保存する時に実行属性を付与する
+(add-hook 'after-save-hook
+	  'executable-make-buffer-file-executable-if-script-p)
+
+;; 対応する括弧をハイライト
+(show-paren-mode t)
 
 ;;; 行の先頭でC-kを一回押すだけで行全体を消去する
 (setq kill-whole-line t)

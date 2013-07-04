@@ -39,13 +39,10 @@
 (setq iswitchb-prompt-newbuffer nil)
 ;;============iswitchb-mode=======================================
 
-;; C-k で改行までkillする
-(setq kill-whole-line t)
-
 ;; C-u で別のウィンドウに移動
 (global-set-key "\C-u" 'other-window)
 
-;; 
+;; 起動時に余計な表示をさせない
 (if (not (<= emacs-major-version 23))
     (setq inhibit-startup-message t)
   (setq inhibit-startup-screen t))
