@@ -114,4 +114,4 @@ alias ll='ls -l'
 alias emacs='emacs -nw'
 alias sl='ls'
 alias gdb='emacs -f gdb'
-
+alias em='emacsclient -t'

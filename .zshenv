@@ -6,6 +6,7 @@ export KCODE=u
 
 # エディタを ターミナル版の emacs にする
 export EDITOR="emacs -nw"
+export GIT_EDITOR="emacsclient -t"
 
 # rbenv のパスを追加
 export PATH="$HOME/.rbenv/bin:$PATH"
