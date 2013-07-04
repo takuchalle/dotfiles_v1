@@ -52,6 +52,5 @@
 ;; インデントでタブ文字を使用する
 (setq-default indent-tabs-mode t)
 
-(load "coding-style.el")
 (load "skk-setting.el")
 (load "my-ruby.el")
