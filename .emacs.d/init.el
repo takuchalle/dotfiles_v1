@@ -13,12 +13,12 @@
         )
        load-path))
 
-(require 'init-loader)
-(init-loader-load "~/.emacs.d/inits")
+(when (require 'init-loader nil t)
+  (init-loader-load "~/.emacs.d/inits"))
 
 ;; install-elisp の設定
-(require 'install-elisp)
-(setq install-elisp-repository-directory "~/.emacs.d/elisp/")
+(when (require 'install-elisp nil t)
+  (setq install-elisp-repository-directory "~/.emacs.d/elisp/"))
 
 ;;============iswitchb-mode========================================
 ;; バッファの切り替えを強化する

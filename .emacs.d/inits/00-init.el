@@ -53,15 +53,15 @@
 (setq message-log-max 10000)
 
 ;;;サーバ起動
-(require 'server)
-(unless (server-running-p)
-    (server-start))
+(when (require 'server nil t)
+  (unless (server-running-p)
+    (server-start)))
 
 ;;自動再読み込み
 (global-auto-revert-mode t)
 
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(when (require 'uniquify nil t)
+  (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
 
 ;;; debug用
 (setq debug-on-error t)

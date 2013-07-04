@@ -14,12 +14,12 @@
           '(lambda () (inf-ruby-keys)))
 
 ;; ruby-electric
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook
-          '(lambda () (ruby-electric-mode t)))
+(when (require 'ruby-electric nil t)
+  (add-hook 'ruby-mode-hook
+	    '(lambda () (ruby-electric-mode t))))
 
 ;; ruby-block
-(require 'ruby-block)
-(ruby-block-mode t)
-;; ミニバッファに表示し, かつ, オーバレイする.
-(setq ruby-block-highlight-toggle t)
+(when (require 'ruby-block nil t)
+  (ruby-block-mode t)
+  ;; ミニバッファに表示し, かつ, オーバレイする.
+  (setq ruby-block-highlight-toggle t))
