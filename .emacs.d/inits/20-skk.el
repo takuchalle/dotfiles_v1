@@ -6,20 +6,17 @@
   (global-set-key "\C-xt" 'skk-tutorial)
   
   (setq skk-large-jisyo "~/.emacs.d/elisp/skk/SKK-JISYO.L")
-  
+
+  (autoload 'skk-isearch-mode-setup "skk-isearch" nil t)
+  (autoload 'skk-isearch-mode-cleanup "skk-isearch" nil t)
   (add-hook 'isearch-mode-hook
-	    #'(lambda ()
-		(when (and (boundp 'skk-mode)
-			   skk-mode
-			   skk-isearch-mode-enable)
-		  (skk-isearch-mode-setup))))
-  
+	    (function (lambda ()
+			(and (boundp 'skk-mode) skk-mode
+			     (skk-isearch-mode-setup) ))))
   (add-hook 'isearch-mode-end-hook
-	    #'(lambda ()
-		(when (and (featurep 'skk-isearch)
-			   skk-isearch-mode-enable)
-		  (skk-isearch-mode-cleanup))))
+	    (function (lambda ()
+			(and (boundp 'skk-mode) skk-mode
+			     (skk-isearch-mode-cleanup)
+			     (skk-set-cursor-properly) )))))
   
-  (add-hook 'isearch-mode-hook 'skk-isearch-mode-setup)
-  (add-hook 'isearch-mode-end-hook 'skk-isearch-mode-cleanup))
 
