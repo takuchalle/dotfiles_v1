@@ -72,6 +72,11 @@
 ;; C-x C-f の時、現在位置のファイルがデフォルトになる
 (ffap-bindings)
 
+;; 
+(require 'tempbuf)
+(add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
+(add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
+
 ;; ファイルを自動で保存する
 ;; (auto-install-from-url "https://raw.github.com/kentaro/auto-save-buffers-enhanced/master/auto-save-buffers-enhanced.el")
 (when (require 'auto-save-buffers-enhanced nil t)
