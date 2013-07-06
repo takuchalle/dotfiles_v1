@@ -9,19 +9,34 @@
         (expand-file-name "~/.emacs.d/")
         (expand-file-name "~/.emacs.d/elisp/")
         (expand-file-name "~/.emacs.d/elisp/color-theme-6.6.0/")
+        (expand-file-name "~/.emacs.d/elisp/auto-complete/")
         )
        load-path))
 
-(require 'init-loader)
-(init-loader-load "~/.emacs.d/inits")
+(when (require 'package nil t)
+  ;; パッケージリポジトリの追加
+  (add-to-list 'package-archives '("marmalade". "http://marmalade-repo.org/packages/"))
+  (add-to-list 'package-archives '("ELPA". "http://tromey.com/elpa/"))
+  (package-initialize))
+
+(when (require 'init-loader nil t)
+  (init-loader-load "~/.emacs.d/inits"))
 
 ;; install-elisp の設定
-(require 'install-elisp)
-(setq install-elisp-repository-directory "~/.emacs.d/elisp/")
+(when (require 'install-elisp nil t)
+  (setq install-elisp-repository-directory "~/.emacs.d/elisp/"))
 
 ;;============iswitchb-mode========================================
 ;; バッファの切り替えを強化する
 (iswitchb-mode 1)
+;;; C-f, C-b, C-n, C-p で候補を切り替えることができるように。
+(add-hook 'iswitchb-define-mode-map-hook
+	        (lambda ()
+		  (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
+		  (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)
+		  (define-key iswitchb-mode-map "\C-f" 'iswitchb-next-match)
+		  (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)))
+
 ;; バッファ読み込み関数をiswitchb にする
 (setq read-buffer-function 'iswitchb-read-buffer)
 ;; 部分文字列の代わりに正規表現を使う場合は t を設定する
@@ -30,32 +45,16 @@
 (setq iswitchb-prompt-newbuffer nil)
 ;;============iswitchb-mode=======================================
 
-;; C-k で改行までkillする
-(setq kill-whole-line t)
-
 ;; C-u で別のウィンドウに移動
 (global-set-key "\C-u" 'other-window)
 
-;; 
+;; 起動時に余計な表示をさせない
 (if (not (<= emacs-major-version 23))
     (setq inhibit-startup-message t)
   (setq inhibit-startup-screen t))
 
-;; TABの表示幅4
-(setq-default tab-width 4)
-;; インデントでタブ文字を使用しない
-(setq-default indent-tabs-mode nil)
-
-;; 色の設定
-(when (require 'color-theme nil t)
-  (color-theme-initialize)
-  (color-theme-hober))
-
-;; 対応する括弧をハイライト
-(show-paren-mode t)
-
-(load "coding.el")
-(load "coding-style.el")
-(load "skk-setting.el")
-(load "my-ruby.el")
+;; TABの表示幅8
+(setq-default tab-width 8)
+;; インデントでタブ文字を使用する
+(setq-default indent-tabs-mode t)
 

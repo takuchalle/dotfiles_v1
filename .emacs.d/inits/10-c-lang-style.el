@@ -2,8 +2,8 @@
 ;; 
 (defun add-c-mode-conf ()
   (c-set-style "cc-mode")
-  (setq indent-tabs-mode nil)
-  (setq c-basic-offset 4)
+  (setq indent-tabs-mode t)
+  (setq c-basic-offset 8)
   (c-set-offset 'innamespace 0)
   )
 

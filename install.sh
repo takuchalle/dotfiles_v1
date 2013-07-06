@@ -1,6 +1,6 @@
 #/bin/zsh
 
-FILES=(".emacs.d" ".gitignore" ".tmux.conf" ".zshenv" ".zshrc" ".gemrc")
+FILES=(".emacs.d" ".gitignore" ".tmux.conf" ".zshenv" ".zshrc" ".gemrc" ".screenrc")
 PWD=`pwd`
 OLDPOSTFIX=".old"
 

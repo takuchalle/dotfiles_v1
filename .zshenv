@@ -1,3 +1,17 @@
+# 表示を英語にする
+export LANG=en_US.UTF-8
+
+# KCODE に UTF-8 を設定
+export KCODE=u
+
+# エディタを ターミナル版の emacs にする
 export EDITOR="emacs -nw"
+export GIT_EDITOR="emacsclient -t"
+
+# rbenv のパスを追加
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+
+# rbenv があるときのみ実行
+if [ -x "`which rbenv`" ]; then
+    eval "$(rbenv init -)"
+fi
