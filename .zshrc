@@ -51,7 +51,7 @@ autoload -Uz add-zsh-hook
 add-zsh-hook precmd _update_vcs_info_msg
 local p_git="%1(v|%1v|)"
 
-local p_cdir="%B%F{red}%n@%m%f [%~]%b $p_git"$'\n'
+local p_cdir="%B%F{red}%n@%m%f [%~]%b %F{yellow}$p_git%f"$'\n'
 local p_mark="%(?,%F{white},%F{blue})$%f"
 PROMPT="$p_cdir$p_mark "
 
