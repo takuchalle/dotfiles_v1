@@ -75,7 +75,7 @@
 ;; ファイルを自動で保存する
 ;; (auto-install-from-url "https://raw.github.com/kentaro/auto-save-buffers-enhanced/master/auto-save-buffers-enhanced.el")
 (when (require 'auto-save-buffers-enhanced nil t)
-  (setq auto-save-buffers-enhanced-interval 2)
+  (setq auto-save-buffers-enhanced-interval 1)
   (auto-save-buffers-enhanced t)
   )
 
