@@ -59,3 +59,16 @@
 ;; インデントでタブ文字を使用する
 (setq-default indent-tabs-mode t)
 
+
+(defun count-lines-and-chars ()
+  (if mark-active
+      (format "[%dL%dw%dc]"
+	      (count-lines (region-beginning) (region-end))
+	      (how-many "[^
+]+" (region-beginning) (region-end))
+;              (how-many "\\w+" (region-beginning) (region-end))
+	      (- (region-end) (region-beginning)))
+    ""))
+(add-to-list 'default-mode-line-format
+	     '(:eval (count-lines-and-chars)))
+
