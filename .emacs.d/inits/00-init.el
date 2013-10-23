@@ -22,7 +22,7 @@
 (setq gc-cons-threshold (* 10 gc-cons-threshold))
 
 ;; ctrl-h backspace
-(keyboard-translate ?\C-h ?\C-?)
+(global-set-key "\C-h" 'delete-backward-char)
 
 ;; 改行時にインデントを行う
 (global-set-key (kbd "C-m") 'newline-and-indent)
