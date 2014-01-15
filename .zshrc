@@ -131,3 +131,11 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
 	fi
     fi
 fi
+
+
+#
+# 環境固有の設定を読み込み
+#
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
