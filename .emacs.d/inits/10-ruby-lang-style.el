@@ -1,20 +1,27 @@
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
-(setq auto-mode-alist
-      (cons '("\\.rb$" . ruby-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+
 (setq interpreter-mode-alist
       (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
+
 (autoload 'inf-ruby-keys "inf-ruby"
   "Set local key defs for inf-ruby in ruby-mode")
+
 (add-hook 'ruby-mode-hook
-          '(lambda () (inf-ruby-keys)))
+          '(lambda ()
+	     (inf-ruby-keys)
+	     (setq tab-width 4)
+	     (setq ruby-indent-level tab-width)))
 
 ;; ruby-electric
 (when (require 'ruby-electric nil t)
   (add-hook 'ruby-mode-hook
-	    '(lambda () (ruby-electric-mode t))))
+	    '(lambda () (ruby-electric-mode t)))
+  (setq ruby-electric-expand-delimiters-list nil))
 
 ;; ruby-block
 (when (require 'ruby-block nil t)
