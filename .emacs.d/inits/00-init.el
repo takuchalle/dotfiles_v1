@@ -84,3 +84,6 @@
   (auto-save-buffers-enhanced t)
   )
 
+;; find-file の補完で大文字小文字を区別しない
+(setq completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
