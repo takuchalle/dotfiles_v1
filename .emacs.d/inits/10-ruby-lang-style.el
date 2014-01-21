@@ -28,3 +28,6 @@
   (ruby-block-mode t)
   ;; ミニバッファに表示し, かつ, オーバレイする.
   (setq ruby-block-highlight-toggle t))
+
+;; マジックコメントの自動挿入抑止
+(setq ruby-insert-encoding-magic-comment nil)
