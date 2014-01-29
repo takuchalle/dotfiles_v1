@@ -4,6 +4,11 @@
 setopt auto_cd
 setopt correct
 setopt no_beep
+setopt ignore_eof
+setopt notify
+setopt auto_list
+setopt auto_pushd
+
 
 #
 # History
@@ -61,8 +66,6 @@ PROMPT="$p_cdir$p_mark "
 local p_info="[%h](%T)"
 RPROMPT="$p_info"
 
-
-
 # key bind
 #
 bindkey -e
@@ -76,16 +79,6 @@ bindkey "^N" history-beginning-search-forward-end
 # WORDCHARS
 #
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
-#
-# Options
-#
-setopt ignore_eof
-setopt notify
-setopt auto_list
-setopt nobeep
-setopt auto_cd
-setopt auto_pushd
 
 #
 # Complementarity
@@ -107,7 +100,6 @@ compctl -g '*.ps' gv lpr idraw
 # Aliases
 #
 alias ls='ls -F --color=yes'
-alias l='ls -lAgs | less -r'
 alias less='/usr/bin/less'
 alias la='ls -A'
 alias ll='ls -l'
@@ -131,7 +123,6 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
 	fi
     fi
 fi
-
 
 #
 # 圧縮ファイル指定で拡張子に合わせて解凍してくれる
