@@ -5,7 +5,7 @@ export LANG=en_US.UTF-8
 export KCODE=u
 
 # エディタを ターミナル版の emacs にする
-export EDITOR="emacs -nw"
+export EDITOR="emacsclient -t"
 export GIT_EDITOR="emacsclient -t"
 
 # rbenv のパスを追加
