@@ -152,3 +152,8 @@ alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
+
+if pgrep emacs > /dev/null 2>&1; then
+else
+    `emacs --daemon`
+fi
