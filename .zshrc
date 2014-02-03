@@ -153,7 +153,7 @@ if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
-if ps aux | grep emacs > /dev/null 2>&1; then
+if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
     `emacs --daemon`
 fi
