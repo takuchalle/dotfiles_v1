@@ -125,6 +125,29 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
 fi
 
 #
+# emacs 自動起動
+#
+if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
+else
+    `emacs --daemon`
+fi
+
+
+#
+# view alias のための関数
+#
+function read_only_emacs() {
+    [ -f "$1" ] || (echo "ファイルが見つかりませんでした: $1" >&2; exit 1)
+    emacs "$1" --eval '(setq buffer-read-only t)'
+}
+
+function read_only_emacsclient() {
+    emacsclient -t -e "(find-file-read-only \"$1\")"
+}
+
+alias view='read_only_emacsclient'
+
+#
 # 圧縮ファイル指定で拡張子に合わせて解凍してくれる
 # http://d.hatena.ne.jp/itchyny/20130227/1361933011
 function extract() {
@@ -153,7 +176,3 @@ if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
-if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
-else
-    `emacs --daemon`
-fi
