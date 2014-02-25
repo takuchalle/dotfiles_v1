@@ -18,6 +18,7 @@
   ;; パッケージリポジトリの追加
   (add-to-list 'package-archives '("marmalade". "http://marmalade-repo.org/packages/"))
   (add-to-list 'package-archives '("ELPA". "http://tromey.com/elpa/"))
+  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
   (package-initialize))
 
 (when (require 'init-loader nil t)
@@ -72,3 +73,4 @@
 (add-to-list 'default-mode-line-format
 	     '(:eval (count-lines-and-chars)))
 
+(setq url-proxy-services '(("http" . "proxy.hq.sony.co.jp:10080")))
