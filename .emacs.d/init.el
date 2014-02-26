@@ -73,4 +73,4 @@
 (add-to-list 'default-mode-line-format
 	     '(:eval (count-lines-and-chars)))
 
-(setq url-proxy-services '(("http" . "proxy.hq.sony.co.jp:10080")))
+
