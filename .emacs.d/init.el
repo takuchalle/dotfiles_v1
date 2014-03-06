@@ -73,4 +73,7 @@
 (add-to-list 'default-mode-line-format
 	     '(:eval (count-lines-and-chars)))
 
-
+;; ファイル名を取得する
+(defun file-name-insert (arg)
+    (interactive "p")
+    (insert (file-name-nondirectory buffer-file-name)))
