@@ -1,3 +1,5 @@
 *~
 *.o
 *.elc
+
+.emacs.d/inits/00-local.el
