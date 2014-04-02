@@ -98,3 +98,13 @@
 ;; dired で開いているときに、 r を押してファイル/ディレクトリ名変更
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+
+;; recentf 強化
+(when (require 'recentf nil t)
+  (setq recentf-max-saved-items 2000)
+  (setq recentf-exclude '(".recentf"))
+  (setq recentf-auto-cleanup 10)
+  (setq recentf-auto-save-timer
+	(run-with-idle-timer 30 t 'recentf-save-list))
+  (recentf-mode 1)
+  (require 'recentf-ext))
