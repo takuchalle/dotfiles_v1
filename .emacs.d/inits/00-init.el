@@ -89,9 +89,12 @@
 (setq read-file-name-completion-ignore-case t)
 
 ;; magit
-(when (require 'magit nil t)
-  )
+(when (require 'magit nil t))
 
 ;; dsvn
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
+
+;; dired で開いているときに、 r を押してファイル/ディレクトリ名変更
+(require 'wdired)
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
