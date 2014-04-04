@@ -26,4 +26,10 @@
   (defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
     "Emulate `kill-line' in helm minibuffer"
     (kill-new (buffer-substring (point) (field-end))))
+
+  (when (require 'helm-ag nil t)
+    ;; http://d.hatena.ne.jp/syohex/20130302/1362182193
+    (define-key global-map (kbd "M-g .") 'helm-ag)
+    (define-key global-map (kbd "M-g ,") 'helm-ag-pop-stack)
+    (define-key global-map (kbd "C-M-s") 'helm-ag-this-file))
   )
