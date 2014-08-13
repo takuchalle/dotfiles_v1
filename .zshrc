@@ -121,6 +121,8 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
 	else
 	    tmux new-session && echo "tmux created new session"
 	fi
+    elif type screen >/dev/null 2>&1; then
+	screen -rx || screen -D -RR
     fi
 fi
 
