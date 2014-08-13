@@ -1,3 +1,5 @@
-(when (require 'auto-complete-config nil t)
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
-  (ac-config-default))
+(when (require 'auto-complete nil t)
+  (when (require 'auto-complete-config nil t)
+    (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
+    (ac-config-default))
+  )
