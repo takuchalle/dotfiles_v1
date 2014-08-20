@@ -47,8 +47,6 @@
 (setq iswitchb-prompt-newbuffer nil)
 ;;============iswitchb-mode=======================================
 
-;; C-u で別のウィンドウに移動
-(global-set-key "\C-u" 'other-window)
 
 ;; 起動時に余計な表示をさせない
 (if (not (<= emacs-major-version 23))

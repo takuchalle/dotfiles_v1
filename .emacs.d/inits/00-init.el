@@ -108,3 +108,6 @@
 	(run-with-idle-timer 30 t 'recentf-save-list))
   (recentf-mode 1)
   (require 'recentf-ext))
+
+;; C-t で別のウィンドウに移動
+(global-set-key "\C-t" 'other-window)
