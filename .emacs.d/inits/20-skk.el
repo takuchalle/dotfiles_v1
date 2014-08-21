@@ -1,4 +1,9 @@
-(setq load-path (cons "~/.emacs.d/elisp/skk" load-path))
+(setq load-path
+      (append
+       (list
+        (expand-file-name "~/.emacs.d/elisp/skk")
+        )
+       load-path))
 
 (when (require 'skk-autoloads nil t)
   (global-set-key "\C-x\C-j" 'skk-mode)
