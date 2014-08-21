@@ -109,5 +109,6 @@
   (recentf-mode 1)
   (require 'recentf-ext))
 
-;; C-t で別のウィンドウに移動
+;; C-t/C-u で別のウィンドウに移動
 (global-set-key "\C-t" 'other-window)
+(global-set-key "\C-u" 'other-window)
