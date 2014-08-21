@@ -107,7 +107,9 @@ alias emacs='emacs -nw'
 alias sl='ls'
 alias gdb='emacs -f gdb'
 alias em='emacsclient -t'
-
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
 
 #
 # tmux 自動起動 
