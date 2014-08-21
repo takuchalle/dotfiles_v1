@@ -45,13 +45,3 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
-
-#
-# emacs 自動起動
-#
-if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
-else
-    `emacs --daemon`
-fi
-
-
