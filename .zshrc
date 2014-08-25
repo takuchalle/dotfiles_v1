@@ -1,4 +1,11 @@
 #
+# 環境固有の設定を読み込み
+#
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
+#
 # Shell Variables
 #
 setopt auto_cd
@@ -170,13 +177,4 @@ function extract() {
     esac
 }
 alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
-
-
-
-#
-# 環境固有の設定を読み込み
-#
-if [ -e ~/.zshrc.local ]; then
-    source ~/.zshrc.local
-fi
 
