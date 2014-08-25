@@ -48,6 +48,10 @@ export CLICOLOR=true
 # 補完候補に色を付ける
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
+### LESS Color ###
+#
+export LESS='-R'
+
 #
 # Left Prompt
 #
@@ -107,7 +111,7 @@ compctl -g '*.ps' gv lpr idraw
 # Aliases
 #
 alias ls='ls -F --color=yes'
-alias less='/usr/bin/less'
+alias less='/usr/bin/less -R'
 alias la='ls -A'
 alias ll='ls -l'
 alias emacs='emacs -nw'
