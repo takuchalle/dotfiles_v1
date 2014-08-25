@@ -1,0 +1,9 @@
+[user]
+	name = Takuya OHASHI
+	email = tky.ohashi@gmail.com
+
+[alias]
+	co = checkout
+	st = status
+
+
