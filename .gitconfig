@@ -2,8 +2,20 @@
 	name = Takuya OHASHI
 	email = tky.ohashi@gmail.com
 
+[color]
+	ui = auto
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+	
 [alias]
 	co = checkout
 	st = status
+	sh = show
+	dc = diff --cached
+	df = diff
 
-
+[core]
+	pager = less -R
