@@ -2,6 +2,7 @@
   "Mode for editing ruby source files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 
 (setq interpreter-mode-alist
       (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
