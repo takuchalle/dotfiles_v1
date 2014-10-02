@@ -12,6 +12,8 @@
 (autoload 'inf-ruby-keys "inf-ruby"
   "Set local key defs for inf-ruby in ruby-mode")
 
+(autoload 'rubydb "rubydb3x" "run rubydb on program file in buffer" t)
+
 (add-hook 'ruby-mode-hook
           '(lambda ()
 	     (inf-ruby-keys)
