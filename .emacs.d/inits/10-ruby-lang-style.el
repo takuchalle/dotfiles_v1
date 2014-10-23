@@ -2,6 +2,7 @@
   "Mode for editing ruby source files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 
 (setq interpreter-mode-alist
       (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
@@ -10,6 +11,8 @@
 
 (autoload 'inf-ruby-keys "inf-ruby"
   "Set local key defs for inf-ruby in ruby-mode")
+
+(autoload 'rubydb "rubydb3x" "run rubydb on program file in buffer" t)
 
 (add-hook 'ruby-mode-hook
           '(lambda ()
