@@ -65,6 +65,6 @@
 	     '(:eval (count-lines-and-chars)))
 
 ;; ファイル名を取得する
-(defun file-name-insert (arg)
+(defun insert-file-name (arg)
     (interactive "p")
     (insert (file-name-nondirectory buffer-file-name)))
