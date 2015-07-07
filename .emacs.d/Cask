@@ -36,3 +36,4 @@
 (depends-on "epl")
 (depends-on "color-theme")
 (depends-on "recentf-ext")
+(depends-on "auto-save-buffers-enhanced")
