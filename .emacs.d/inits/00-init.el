@@ -91,11 +91,6 @@
 ;; C-x C-f の時、現在位置のファイルがデフォルトになる
 (ffap-bindings)
 
-;; 
-(require 'tempbuf)
-(add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
-(add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
-
 ;; ファイルを自動で保存する
 ;; (auto-install-from-url "https://raw.github.com/kentaro/auto-save-buffers-enhanced/master/auto-save-buffers-enhanced.el")
 (when (require 'auto-save-buffers-enhanced nil t)
@@ -131,3 +126,51 @@
 ;; C-t/C-u で別のウィンドウに移動
 (global-set-key "\C-t" 'other-window)
 (global-set-key "\C-u" 'other-window)
+
+;;============iswitchb-mode========================================
+;; バッファの切り替えを強化する
+(iswitchb-mode 1)
+;;; C-f, C-b, C-n, C-p で候補を切り替えることができるように。
+(add-hook 'iswitchb-define-mode-map-hook
+	        (lambda ()
+		  (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
+		  (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)
+		  (define-key iswitchb-mode-map "\C-f" 'iswitchb-next-match)
+		  (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)))
+
+;; バッファ読み込み関数をiswitchb にする
+(setq read-buffer-function 'iswitchb-read-buffer)
+;; 部分文字列の代わりに正規表現を使う場合は t を設定する
+(setq iswitchb-regexp nil)
+;; 新しいバッファを作成するときにいちいち聞いてこない
+(setq iswitchb-prompt-newbuffer nil)
+;;============iswitchb-mode=======================================
+
+
+;; 起動時に余計な表示をさせない
+(if (not (<= emacs-major-version 23))
+    (setq inhibit-startup-message t)
+  (setq inhibit-startup-screen t))
+
+;; TABの表示幅8
+(setq-default tab-width 8)
+;; インデントでタブ文字を使用する
+(setq-default indent-tabs-mode t)
+
+
+(defun count-lines-and-chars ()
+  (if mark-active
+      (format "[%dL%dw%dc]"
+	      (count-lines (region-beginning) (region-end))
+	      (how-many "[^
+]+" (region-beginning) (region-end))
+;              (how-many "\\w+" (region-beginning) (region-end))
+	      (- (region-end) (region-beginning)))
+    ""))
+(add-to-list 'default-mode-line-format
+	     '(:eval (count-lines-and-chars)))
+
+;; ファイル名を取得する
+(defun insert-file-name (arg)
+    (interactive "p")
+    (insert (file-name-nondirectory buffer-file-name)))
