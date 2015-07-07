@@ -174,3 +174,8 @@
 (defun insert-file-name (arg)
     (interactive "p")
     (insert (file-name-nondirectory buffer-file-name)))
+
+;; auto save
+(require 'auto-save-buffers-enhanced)
+(setq auto-save-buffers-enhanced-interval 0.1) ;; 指定のアイドル秒で保存
+(auto-save-buffers-enhanced t)
