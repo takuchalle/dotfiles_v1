@@ -38,5 +38,7 @@
 (depends-on "org")
 (depends-on "epl")
 (depends-on "color-theme")
+(depends-on "color-theme-solarized")
 (depends-on "recentf-ext")
-(depends-on "auto-save-buffers-enhanced" :git "https://github.com/kentaro/auto-save-buffers-enhanced.git")
+(depends-on "auto-save-buffers-enhanced")
+(depends-on "neotree")
