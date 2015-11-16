@@ -9,7 +9,9 @@ export EDITOR="emacsclient -t"
 export GIT_EDITOR="emacsclient -t"
 
 # rbenv のパスを追加
-export PATH="$HOME/.rbenv/bin:$PATH"
+if [ -e $HOME/.rbenv/bin ] ;then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+fi
 
 # rbenv があるときのみ実行
 if [ -x "`which rbenv`" ]; then
