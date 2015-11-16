@@ -42,3 +42,4 @@
 (depends-on "recentf-ext")
 (depends-on "auto-save-buffers-enhanced")
 (depends-on "neotree")
+

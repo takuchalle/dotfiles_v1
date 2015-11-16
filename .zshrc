@@ -24,6 +24,8 @@ autoload -Uz cdr
 autoload -Uz colors; colors
 autoload -U compinit; compinit
 
+export TERM=xterm-256color
+
 #
 # Shell Variables
 #
@@ -130,6 +132,7 @@ alias em='emacsclient -t'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
+alias tmux='tmux -2'
 
 #
 # tmux 自動起動 
