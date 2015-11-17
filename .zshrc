@@ -1,9 +1,28 @@
+#          _
+#  _______| |__  _ __ ___
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__
+# /___|___/_| |_|_|  \___|
 #
+#
+umask 022
+
+# utils
+if [ -e ./etc/utils.sh ]; then
+    source ./etc/utils.sh
+fi
+
 # 環境固有の設定を読み込み
-#
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
+
+# autoload
+autoload -U  run-help
+autoload -Uz add-zsh-hook
+autoload -Uz cdr
+autoload -Uz colors; colors
+autoload -U compinit; compinit
 
 export TERM=xterm-256color
 
@@ -18,7 +37,6 @@ setopt notify
 setopt auto_list
 setopt auto_pushd
 
-
 #
 # History
 #
@@ -31,12 +49,6 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt share_history
-
-#
-# Color Settings
-#
-autoload -U colors;
-colors
 
 ### ls Color ###
 # 色の設定
@@ -65,7 +77,6 @@ function _update_vcs_info_msg() {
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-autoload -Uz add-zsh-hook
 add-zsh-hook precmd _update_vcs_info_msg
 local p_git="%1(v|%1v|)"
 
@@ -96,8 +107,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #
 # Complementarity
 #
-autoload -U compinit
-compinit
 setopt auto_list
 setopt auto_menu
 setopt list_packed
@@ -112,12 +121,12 @@ compctl -g '*.ps' gv lpr idraw
 #
 # Aliases
 #
-alias ls='ls -F --color=yes'
 alias less='/usr/bin/less -R'
 alias la='ls -A'
 alias ll='ls -l'
-alias emacs='emacs -nw'
+alias ld='ls -ld'
 alias sl='ls'
+alias emacs='emacs -nw'
 alias gdb='emacs -f gdb'
 alias em='emacsclient -t'
 alias rm='rm -i'
