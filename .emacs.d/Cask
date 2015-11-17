@@ -43,4 +43,5 @@
 (depends-on "auto-save-buffers-enhanced")
 (depends-on "neotree")
 (depends-on "dropdown-list")
+(depends-on "helm-c-yasnippet")
 
