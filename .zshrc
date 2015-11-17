@@ -164,7 +164,7 @@ fi
 # view alias のための関数
 #
 function read_only_emacs() {
-    [ -f "$1" ] || (echo "ファイルが見つかりませんでした: $1" >&2; exit 1)
+    [ -f "$1" ] || (echo "No such file: $1" >&2; exit 1)
     emacs "$1" --eval '(setq buffer-read-only t)'
 }
 
