@@ -17,3 +17,8 @@ fi
 if [ -x "`which rbenv`" ]; then
     eval "$(rbenv init -)"
 fi
+
+# path to cask
+if [ -e $HOME/.cask/bin ] ;then
+    export PATH="$HOME/.cask/bin:$PATH"
+fi
