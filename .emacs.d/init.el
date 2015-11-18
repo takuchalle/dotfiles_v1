@@ -13,7 +13,7 @@
         (load-file secret)))
 
 (require 'cask "~/.cask/cask.el")
-(cask-initialize)
+(defconst cask-bundle (cask-initialize))
 
 (when (require 'init-loader nil t)
   (init-loader-load "~/.emacs.d/inits"))

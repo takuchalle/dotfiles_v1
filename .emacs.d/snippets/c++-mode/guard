@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: guard
+# key: guard
+# binding: direct-keybinding
+# --
+#ifndef __$1__H_INCLUDED__
+#define __$1__H_INCLUDED__
+
+
+
+#endif /* __$1__H_INCLUDED__ */

@@ -6,13 +6,6 @@
 
 (setq interpreter-mode-alist
       (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
-(autoload 'run-ruby "inf-ruby"
-  "Run an inferior Ruby process")
-
-(autoload 'inf-ruby-keys "inf-ruby"
-  "Set local key defs for inf-ruby in ruby-mode")
-
-(autoload 'rubydb "rubydb3x" "run rubydb on program file in buffer" t)
 
 (add-hook 'ruby-mode-hook
           '(lambda ()
@@ -35,5 +28,3 @@
 
 ;; マジックコメントの自動挿入抑止
 (setq ruby-insert-encoding-magic-comment nil)
-
-;; flycheck
