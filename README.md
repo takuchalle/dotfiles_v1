@@ -1,10 +1,8 @@
-設定ファイル群
+.dotfiles 
 ========
-emacsやtmuxなどの設定ファイルを管理する
+## About
 
-sh ./install.sh でシンボリックリンクを張る
-
-既存にあるファイルは、サフィックスをつけ退避する
+Manage .dotfiles
 
 ## Requirement
 
