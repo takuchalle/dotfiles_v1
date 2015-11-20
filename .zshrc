@@ -7,17 +7,17 @@
 #
 umask 022
 
+export DOTPATH="${0:A:h}"
+
 # utils
-if [ -e ./etc/utils.sh ]; then
-    source ./etc/utils.sh
+if [ -e $DOTPATH/etc/utils.sh ]; then
+    source $DOTPATH/etc/utils.sh
 fi
 
 # 環境固有の設定を読み込み
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
-
-os_detect()
 
 # autoload
 autoload -U  run-help
@@ -125,7 +125,8 @@ compctl -g '*.ps' gv lpr idraw
 #
 alias less='/usr/bin/less -R'
 
-case "${PLATFORM}" in
+os_detect
+case "$PLATFORM" in
     linux)
 	alias ls='ls --color=auto' ;;
     cygwin)
