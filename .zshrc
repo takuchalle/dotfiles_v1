@@ -17,6 +17,8 @@ if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
+os_detect()
+
 # autoload
 autoload -U  run-help
 autoload -Uz add-zsh-hook
@@ -122,6 +124,17 @@ compctl -g '*.ps' gv lpr idraw
 # Aliases
 #
 alias less='/usr/bin/less -R'
+
+case "${PLATFORM}" in
+    linux)
+	alias ls='ls --color=auto' ;;
+    cygwin)
+	alias ls='ls --color=auto' ;;
+    osx)
+	alias ls='ls -G' ;;
+    *)
+esac
+
 alias la='ls -A'
 alias ll='ls -l'
 alias ld='ls -ld'
