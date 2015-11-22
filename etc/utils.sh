@@ -29,6 +29,7 @@ os_detect() {
 	*'linux'*)  PLATFORM='linux'   ;;
 	*'darwin'*) PLATFORM='osx'     ;;
 	*'bsd'*)    PLATFORM='bsd'     ;;
+	*'cygwin'*) PLATFORM='cygwin'  ;;
 	*)          PLATFORM='unknown' ;;
     esac
 }
