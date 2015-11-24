@@ -7,7 +7,12 @@
 #
 umask 022
 
-export DOTPATH="${0:A:h}"
+export DOTPATH=$HOME/.dotfiles
+
+if [ ! -d $DOTPATH ]; then
+    echo "Not Found : $DOTPATH"
+    exit
+fi
 
 # utils
 if [ -e $DOTPATH/etc/utils.sh ]; then
