@@ -13,7 +13,9 @@ help:
 
 setup: 
 	@echo '==> Start Emacs setup'
-	@-cd $(EMACSDPATH); cask install
+	@-cd $(EMACSDPATH) && cask install
+	-emacsclient -e '(kill-emacs)'
+	emacs --daemon
 
 deploy: 
 	@echo '==> Start to deploy dotfiles to home directory.'
