@@ -6,18 +6,21 @@ EMACSDPATH := $(DOTPATH)/.emacs.d
 
 .PHONY: deploy setup help update
 
-all: deploy
+all: update setup deploy
 
 help:
 	@echo "make deploy"
 
-setup: update
+setup: 
 	@echo '==> Start Emacs setup'
-	cd $(EMACSDPATH); cask install
+	@-cd $(EMACSDPATH); cask install
 
-deploy: setup
+deploy: 
 	@echo '==> Start to deploy dotfiles to home directory.'
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+
+install:
+	@exec $$SHELL
 
 update:
 	git pull
