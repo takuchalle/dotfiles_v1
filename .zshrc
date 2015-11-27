@@ -148,10 +148,15 @@ alias sl='ls'
 alias emacs='emacs -nw'
 alias gdb='emacs -f gdb'
 alias em='emacsclient -t'
-alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias tmux='tmux -2'
+
+if is_exists "gom"i; then
+    alias rm=gomi
+else
+    alias rm='rm -i'
+fi
 
 #
 # tmux 自動起動 

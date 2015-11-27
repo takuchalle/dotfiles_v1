@@ -62,3 +62,8 @@ upper() {
 	return 1
     fi | tr "[:lower:]" "[:upper:]"
 }
+
+is_exists() {
+    which "$1" >/dev/null 2>&1
+    return $?
+}
