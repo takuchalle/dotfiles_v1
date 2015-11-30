@@ -148,10 +148,15 @@ alias sl='ls'
 alias emacs='emacs -nw'
 alias gdb='emacs -f gdb'
 alias em='emacsclient -t'
-alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias tmux='tmux -2'
+
+if is_exists "gom"i; then
+    alias rm=gomi
+else
+    alias rm='rm -i'
+fi
 
 #
 # tmux 自動起動 
@@ -178,38 +183,20 @@ else
     `emacs --daemon`
 fi
 
+if [ -e ~/.zplug/zplug ];then
+    source ~/.zplug/zplug
+    zplug "zsh-users/zsh-syntax-highlighting"
+    zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf
+    zplug "b4b4r07/enhancd", at:v1
 
-#
-# view alias のための関数
-#
-function read_only_emacs() {
-    [ -f "$1" ] || (echo "No such file: $1" >&2; exit 1)
-    emacs "$1" --eval '(setq buffer-read-only t)'
-}
+    # Install plugins if there are plugins that have not been installed
+    if ! zplug check --verbose; then
+	printf "Install? [y/N]: "
+	if read -q; then
+	    echo; zplug install
+	fi
+    fi
 
-function read_only_emacsclient() {
-    emacsclient -t -e "(find-file-read-only \"$1\")"
-}
-
-alias view='read_only_emacsclient'
-
-#
-# 圧縮ファイル指定で拡張子に合わせて解凍してくれる
-# http://d.hatena.ne.jp/itchyny/20130227/1361933011
-function extract() {
-    case $1 in
-	*.tar.gz|*.tgz) tar xzvf $1;;
-	*.tar.xz) tar Jxvf $1;;
-	*.zip) unzip $1;;
-	*.lzh) lha e $1;;
-	*.tar.bz2|*.tbz) tar xjvf $1;;
-	*.tar.Z) tar zxvf $1;;
-	*.gz) gzip -dc $1;;
-	*.bz2) bzip2 -dc $1;;
-	*.Z) uncompress $1;;
-	*.tar) tar xvf $1;;
-	*.arj) unarj $1;;
-    esac
-}
-alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
-
+    # Then, source plugins and add commands to $PATH
+    zplug load --verbose
+fi
