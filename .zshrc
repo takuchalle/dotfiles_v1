@@ -183,7 +183,7 @@ else
     `emacs --daemon`
 fi
 
-if [ -e ~/.zplug/zplug ];then
-    source ~/.zplug/zplug
-    zplug "b4b4r07/enhancd", at:v1, as:command
+# setup plugins
+if [ -e $DOTPATH/etc/plugins.zsh ];then
+    source $DOTPATH/etc/plugins.zsh
 fi
