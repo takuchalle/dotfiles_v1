@@ -186,7 +186,6 @@ fi
 if [ -e ~/.zplug/zplug ];then
     source ~/.zplug/zplug
     zplug "zsh-users/zsh-syntax-highlighting"
-    zplug "junegunn/fzf-bin", as:command, from:gh-r, file:fzf
     zplug "b4b4r07/enhancd", at:v1
 
     # Install plugins if there are plugins that have not been installed
