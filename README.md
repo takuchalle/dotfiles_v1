@@ -8,6 +8,8 @@ Manage .dotfiles
 
 * Emacs
 * Cask
+* zsh
+* tmux
 
 ## How to install
 
