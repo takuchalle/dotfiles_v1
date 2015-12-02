@@ -4,6 +4,7 @@ if [ -e $HOME/.zplug/zplug ];then
     zplug "b4b4r07/enhancd", at:v1
     zplug "olivierverdier/zsh-git-prompt"
     zplug "k4rthik/git-cal", as:command, frozen:1
+    zplug "mrowa44/emojify", as:command
 
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
