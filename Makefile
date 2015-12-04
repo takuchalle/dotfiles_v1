@@ -6,7 +6,7 @@ EMACSDPATH := $(DOTPATH)/.emacs.d
 
 .PHONY: deploy setup help update
 
-all: update setup deploy
+all: update setup deploy install
 
 help:
 	@echo "make deploy"
