@@ -19,6 +19,11 @@ if [ -e $DOTPATH/etc/utils.sh ]; then
     source $DOTPATH/etc/utils.sh
 fi
 
+# setup plugins
+if [ -e $DOTPATH/etc/plugins.zsh ];then
+    source $DOTPATH/etc/plugins.zsh
+fi
+
 # 環境固有の設定を読み込み
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
@@ -181,9 +186,4 @@ fi
 if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
     `emacs --daemon`
-fi
-
-# setup plugins
-if [ -e $DOTPATH/etc/plugins.zsh ];then
-    source $DOTPATH/etc/plugins.zsh
 fi
