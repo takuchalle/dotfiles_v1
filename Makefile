@@ -14,7 +14,7 @@ help:
 setup: 
 	@echo '==> Start Emacs setup'
 	@-cd $(EMACSDPATH) && cask install
-	-emacsclient -e '(kill-emacs)'
+	-emacsclient -e '(kill-emacs)' 2> /dev/null
 	emacs --daemon
 
 deploy: 
