@@ -19,6 +19,11 @@ if [ -e $DOTPATH/etc/utils.sh ]; then
     source $DOTPATH/etc/utils.sh
 fi
 
+# setup plugins
+if [ -e $DOTPATH/etc/plugins.zsh ];then
+    source $DOTPATH/etc/plugins.zsh
+fi
+
 # 環境固有の設定を読み込み
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
@@ -100,11 +105,9 @@ RPROMPT="$p_info"
 # key bind
 #
 bindkey -e
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
 
 #
 # WORDCHARS
@@ -181,9 +184,4 @@ fi
 if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
     `emacs --daemon`
-fi
-
-# setup plugins
-if [ -e $DOTPATH/etc/plugins.zsh ];then
-    source $DOTPATH/etc/plugins.zsh
 fi
