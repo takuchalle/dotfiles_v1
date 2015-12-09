@@ -1,3 +1,6 @@
+#
+# Copyright (c) 2015, TAKUYA Ohashi. All rights reserved.
+#
 DOTPATH    := $(PWD)
 CANDIDATES := $(wildcard .??*)
 EXCLUSIONS := .git .gitignore
