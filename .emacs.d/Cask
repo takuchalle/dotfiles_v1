@@ -42,4 +42,5 @@
 (depends-on "neotree")
 (depends-on "dropdown-list")
 (depends-on "helm-c-yasnippet")
-
+(depends-on "company")
+(depends-on "company-quickhelp")

@@ -1,8 +1,0 @@
-(when (require 'auto-complete nil t)
-  (when (require 'auto-complete-config nil t)
-    (setq ac-auto-show-menu 0.8)
-    (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
-    (ac-config-default)
-    (setq ac-use-menu-map t)
-    )
-  )
