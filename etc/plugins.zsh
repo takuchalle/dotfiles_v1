@@ -1,3 +1,6 @@
+#
+# Copyright (c) 2015, TAKUYA Ohashi. All rights reserved.
+#
 if [ -e $HOME/.zplug/zplug ];then
     source ~/.zplug/zplug
     zplug "zsh-users/zsh-syntax-highlighting"
