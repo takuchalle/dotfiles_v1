@@ -28,4 +28,4 @@ install:
 	@exec $$SHELL
 
 update:
-	git pull
+	git pull origin master
