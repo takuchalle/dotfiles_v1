@@ -183,5 +183,5 @@ fi
 #
 if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
-    `emacs --daemon`
+    `emacs --daemon > /dev/null`
 fi
