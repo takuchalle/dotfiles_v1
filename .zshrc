@@ -105,9 +105,11 @@ RPROMPT="$p_info"
 # key bind
 #
 bindkey -e
-# bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
+if zplug check "zsh-users/zsh-history-substring-search"; then
+    # bind P and N for EMACS mode
+    bindkey -M emacs '^P' history-substring-search-up
+    bindkey -M emacs '^N' history-substring-search-down
+fi
 
 #
 # WORDCHARS
@@ -183,5 +185,5 @@ fi
 #
 if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
-    `emacs --daemon`
+    `emacs --daemon > /dev/null`
 fi
