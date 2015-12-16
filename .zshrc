@@ -94,6 +94,7 @@ PROMPT='%B%F{red}%n@%m% [%~]%b $(git_super_status) '$'\n''%(?,%F{white},%F{blue}
 # key bind
 #
 bindkey -e
+bindkey -M emacs '^L' backward-kill-word
 if zplug check "zsh-users/zsh-history-substring-search"; then
     # bind P and N for EMACS mode
     bindkey -M emacs '^P' history-substring-search-up
