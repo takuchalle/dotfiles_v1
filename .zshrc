@@ -34,6 +34,7 @@ autoload -U  run-help
 autoload -Uz add-zsh-hook
 autoload -Uz cdr
 autoload -Uz colors; colors
+autoload -Uz vcs_info
 autoload -U compinit; compinit
 
 export TERM=xterm-256color
@@ -48,6 +49,7 @@ setopt ignore_eof
 setopt notify
 setopt auto_list
 setopt auto_pushd
+setopt prompt_subst
 
 #
 # History
@@ -81,33 +83,23 @@ export LESS='-R'
 #
 # Left Prompt
 #
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' check-for-chenges true
-function _update_vcs_info_msg() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-add-zsh-hook precmd _update_vcs_info_msg
-local p_git="%1(v|%1v|)"
+PROMPT='%B%F{red}%n@%m% [%~]%b $(git_super_status) '$'\n''%(?,%F{white},%F{blue})$%f '
+#PROMPT='%B%m%~%b$(git_super_status) %# '
 
-local p_cdir="%B%F{red}%n@%m%f [%~]%b %F{yellow}$p_git%f"$'\n'
-local p_mark="%(?,%F{white},%F{blue})$%f"
-PROMPT="$p_cdir$p_mark "
-
-#
-# Right Prompt
-#
-local p_info="[%h](%T)"
-RPROMPT="$p_info"
+# local p_cdir="%B%F{red}%n@%m%f [%~]%b %F{yellow}$(git_super_status)%f"$'\n'
+#PROMPT="%B%F{red}%n@%m%f [%~]%b %F{yellow}$(git_super_status)%f"$'\n'
+#local p_mark="%(?,%F{white},%F{blue})$%f"
+#PROMPT="$p_cdir$p_mark "
 
 # key bind
 #
 bindkey -e
-# bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
+bindkey -M emacs '^L' backward-kill-word
+if zplug check "zsh-users/zsh-history-substring-search"; then
+    # bind P and N for EMACS mode
+    bindkey -M emacs '^P' history-substring-search-up
+    bindkey -M emacs '^N' history-substring-search-down
+fi
 
 #
 # WORDCHARS
@@ -183,5 +175,5 @@ fi
 #
 if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
-    `emacs --daemon`
+    `emacs --daemon > /dev/null`
 fi
