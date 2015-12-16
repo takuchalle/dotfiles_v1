@@ -96,12 +96,6 @@ local p_cdir="%B%F{red}%n@%m%f [%~]%b %F{yellow}$p_git%f"$'\n'
 local p_mark="%(?,%F{white},%F{blue})$%f"
 PROMPT="$p_cdir$p_mark "
 
-#
-# Right Prompt
-#
-local p_info="[%h](%T)"
-RPROMPT="$p_info"
-
 # key bind
 #
 bindkey -e
