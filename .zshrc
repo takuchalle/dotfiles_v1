@@ -81,15 +81,16 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 export LESS='-R'
 
 #
-# Left Prompt
+# Prompt
 #
-PROMPT='%B%F{red}%n@%m% [%~]%b $(git_super_status) '$'\n''%(?,%F{white},%F{blue})$%f '
-#PROMPT='%B%m%~%b$(git_super_status) %# '
-
-# local p_cdir="%B%F{red}%n@%m%f [%~]%b %F{yellow}$(git_super_status)%f"$'\n'
-#PROMPT="%B%F{red}%n@%m%f [%~]%b %F{yellow}$(git_super_status)%f"$'\n'
-#local p_mark="%(?,%F{white},%F{blue})$%f"
-#PROMPT="$p_cdir$p_mark "
+# git_super_status is too heavy on cygwin
+os_detect
+if [ $PLATFORM = cygwin ]
+then
+    
+else
+    PROMPT='%F{red}%n@%m%f %F{white}[%~]%f $(git_super_status) '$'\n''%(?,%F{white},%F{blue})➜%f '
+fi
 
 # key bind
 #
