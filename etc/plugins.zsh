@@ -1,9 +1,12 @@
+#
+# Copyright (c) 2015, TAKUYA Ohashi. All rights reserved.
+#
 if [ -e $HOME/.zplug/zplug ];then
     source ~/.zplug/zplug
     zplug "zsh-users/zsh-syntax-highlighting"
     zplug "zsh-users/zsh-history-substring-search"
     zplug "b4b4r07/enhancd", at:v1
-    zplug "olivierverdier/zsh-git-prompt"
+    zplug "olivierverdier/zsh-git-prompt", of:"*.sh"
     zplug "k4rthik/git-cal", as:command, frozen:1
     zplug "mrowa44/emojify", as:command
 
