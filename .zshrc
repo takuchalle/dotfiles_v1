@@ -83,14 +83,7 @@ export LESS='-R'
 #
 # Prompt
 #
-# git_super_status is too heavy on cygwin
-os_detect
-if [ $PLATFORM = cygwin ]
-then
-    
-else
-    PROMPT='%F{red}%n@%m%f %F{white}[%~]%f $(git_super_status) '$'\n''%(?,%F{white},%F{blue})➜%f '
-fi
+PROMPT='%B%F{red}%n@%m%f %F{white}[%~]%f%b $(git_super_status) '$'\n''%(?,%F{white},%F{blue})➜%f '
 
 # key bind
 #
