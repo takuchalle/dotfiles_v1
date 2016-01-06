@@ -44,3 +44,5 @@
 (depends-on "helm-c-yasnippet")
 (depends-on "company")
 (depends-on "company-quickhelp")
+(depends-on "irony")
+(depends-on "company-irony")
