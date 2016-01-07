@@ -18,3 +18,7 @@ $ git clone https://github.com/takuyaohashi/dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
 $ make
 ```
+
+## Copyright
+
+TAKUYA Ohashi. All rights reserved.
