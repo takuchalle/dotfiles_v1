@@ -3,9 +3,9 @@
 # key: guard
 # binding: direct-keybinding
 # --
-#ifndef __$1__H_INCLUDED__
-#define __$1__H_INCLUDED__
+#ifndef __$1_H_INCLUDED__
+#define __$1_H_INCLUDED__
 
 
 
-#endif /* __$1__H_INCLUDED__ */
+#endif /* __$1_H_INCLUDED__ */
