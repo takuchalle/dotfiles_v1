@@ -141,7 +141,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias tmux='tmux -2'
 
-if is_exists "gom"i; then
+if is_exists "gomi"; then
     alias rm=gomi
 else
     alias rm='rm -i'
