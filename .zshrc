@@ -141,7 +141,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias tmux='tmux -2'
 
-if is_exists "gom"i; then
+if is_exists "gomi"; then
     alias rm=gomi
 else
     alias rm='rm -i'
@@ -150,19 +150,7 @@ fi
 #
 # tmux 自動起動 
 #
-if [ -z "$TMUX" -a -z "$STY" ]; then
-    if type tmuxx >/dev/null 2>&1; then
-	tmuxx
-    elif type tmux >/dev/null 2>&1; then
-	if tmux has-session && tmux list-sessions | grep -qE '.*]$'; then
-	    tmux attach && echo "tmux attached session "
-	else
-	    tmux new-session && echo "tmux created new session"
-	fi
-    elif type screen >/dev/null 2>&1; then
-	screen -rx || screen -D -RR
-    fi
-fi
+tmuxx
 
 #
 # emacs 自動起動
