@@ -104,3 +104,16 @@ function read_only_emacsclient() {
 }
 alias view='read_only_emacsclient'
 
+tmuxx() {
+    if [ -z "$TMUX" -a -z "$STY" ]; then
+	if type tmux >/dev/null 2>&1; then
+	    if tmux has-session && tmux list-sessions | grep -qE '.*]$'; then
+		tmux attach && echo "tmux attached session "
+	    else
+		tmux new-session && echo "tmux created new session"
+	    fi
+	elif type screen >/dev/null 2>&1; then
+	    screen -rx || screen -D -RR
+	fi
+    fi
+}
