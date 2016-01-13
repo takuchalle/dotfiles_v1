@@ -83,7 +83,7 @@ export LESS='-R'
 #
 # Prompt
 #
-PROMPT='%B%F{red}%n@%m%f %F{white}[%~]%f%b '$'\n''%(?,%F{white},%F{blue})$%f '
+PROMPT='%F{red}%n@%m%f %F{white}[%~]%f '$'\n''%(?,%F{white},%F{blue})$%f '
 
 # key bind
 #
