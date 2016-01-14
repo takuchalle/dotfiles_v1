@@ -83,7 +83,16 @@ export LESS='-R'
 #
 # Prompt
 #
-PROMPT='%F{red}%n@%m%f %F{white}[%~]%f '$'\n''%(?,%F{white},%F{blue})$%f '
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-chenges true
+function _update_vcs_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+add-zsh-hook precmd _update_vcs_info_msg
+p_git="%1(v|%1v|)"
+PROMPT='%F{red}%n@%m%f %F{white}[%~]%f $p_git'$'\n''%(?,%F{white},%F{blue})$%f '
 
 # key bind
 #
