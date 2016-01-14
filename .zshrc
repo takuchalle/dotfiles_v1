@@ -14,6 +14,11 @@ if [ ! -d $DOTPATH ]; then
     exit
 fi
 
+# load local setting (etc) proxy setting
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
 # utils
 if [ -e $DOTPATH/etc/utils.sh ]; then
     source $DOTPATH/etc/utils.sh
@@ -22,11 +27,6 @@ fi
 # setup plugins
 if [ -e $DOTPATH/etc/plugins.zsh ];then
     source $DOTPATH/etc/plugins.zsh
-fi
-
-# 環境固有の設定を読み込み
-if [ -e ~/.zshrc.local ]; then
-    source ~/.zshrc.local
 fi
 
 # autoload
