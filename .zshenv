@@ -8,14 +8,13 @@ export KCODE=u
 export EDITOR="emacsclient -t"
 export GIT_EDITOR="emacsclient -t"
 
-# rbenv のパスを追加
+# rbenv setting 
 if [ -e $HOME/.rbenv/bin ] ;then
     export PATH="$HOME/.rbenv/bin:$PATH"
-fi
-
-# rbenv があるときのみ実行
-if [ -x "`which rbenv`" ]; then
-    eval "$(rbenv init -)"
+    # rbenv init if exist
+    if [ -x "`which rbenv`" ]; then
+	eval "$(rbenv init -)"
+    fi
 fi
 
 # path to cask

@@ -14,6 +14,11 @@ if [ ! -d $DOTPATH ]; then
     exit
 fi
 
+# load local setting (etc) proxy setting
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
 # utils
 if [ -e $DOTPATH/etc/utils.sh ]; then
     source $DOTPATH/etc/utils.sh
@@ -22,11 +27,6 @@ fi
 # setup plugins
 if [ -e $DOTPATH/etc/plugins.zsh ];then
     source $DOTPATH/etc/plugins.zsh
-fi
-
-# 環境固有の設定を読み込み
-if [ -e ~/.zshrc.local ]; then
-    source ~/.zshrc.local
 fi
 
 # autoload
@@ -83,7 +83,17 @@ export LESS='-R'
 #
 # Prompt
 #
-PROMPT='%B%F{red}%n@%m%f %F{white}[%~]%f%b $(git_super_status) '$'\n''%(?,%F{white},%F{blue})->%f '
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git:*' check-for-chenges true
+zstyle ':vcs_info:*' formats '(%s@%b)'
+function _update_vcs_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+add-zsh-hook precmd _update_vcs_info_msg
+p_git="%1(v|%1v|)"
+PROMPT='%F{red}%n@%m%f %F{white}[%~]%f %F{yellow}$p_git%f'$'\n''%(?,%F{white},%F{blue})$%f '
 
 # key bind
 #
