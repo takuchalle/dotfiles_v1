@@ -93,7 +93,7 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 p_git="%1(v|%1v|)"
-PROMPT='%F{red}%n@%m%f %F{white}[%~]%f $p_git'$'\n''%(?,%F{white},%F{blue})$%f '
+PROMPT='%F{red}%n@%m%f %F{white}[%~]%f %F{yellow}$p_git%f'$'\n''%(?,%F{white},%F{blue})$%f '
 
 # key bind
 #
@@ -108,12 +108,11 @@ fi
 #
 # WORDCHARS
 #
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+WORDCHARS='|*?_-.[]~=&;!#$%^(){}<>'
 
 #
 # Complementarity
 #
-setopt auto_list
 setopt auto_menu
 setopt list_packed
 setopt list_types
