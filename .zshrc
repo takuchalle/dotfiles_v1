@@ -108,7 +108,7 @@ fi
 #
 # WORDCHARS
 #
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+WORDCHARS='|*?_-.[]~=&;!#$%^(){}<>'
 
 #
 # Complementarity
