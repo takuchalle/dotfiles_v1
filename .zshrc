@@ -108,12 +108,11 @@ fi
 #
 # WORDCHARS
 #
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+WORDCHARS='|*?_-.[]~=&;!#$%^(){}<>'
 
 #
 # Complementarity
 #
-setopt auto_list
 setopt auto_menu
 setopt list_packed
 setopt list_types
