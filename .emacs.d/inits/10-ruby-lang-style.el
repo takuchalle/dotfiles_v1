@@ -9,7 +9,6 @@
 
 (add-hook 'ruby-mode-hook
           '(lambda ()
-	     (inf-ruby-keys)
 	     (setq tab-width 4)
 	     (setq ruby-indent-level tab-width)
 	     (flycheck-mode)))
