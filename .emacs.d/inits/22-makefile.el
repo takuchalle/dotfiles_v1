@@ -4,10 +4,3 @@
 	  (function
 	   (lambda ()
 	     (fset 'makefile-warn-suspicious-lines 'ignore))))
-
-
-
-
-
-
-
