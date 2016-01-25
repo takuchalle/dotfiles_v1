@@ -7,6 +7,7 @@ if [ -e $HOME/.zplug/zplug ];then
     zplug "zsh-users/zsh-history-substring-search"
     zplug "b4b4r07/enhancd", at:v1
     zplug "k4rthik/git-cal", as:command, frozen:1
+    zplug "b4b4r07/emoji-cli"
     zplug "mrowa44/emojify", as:command
 
     # Install plugins if there are plugins that have not been installed
