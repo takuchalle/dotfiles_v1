@@ -168,3 +168,8 @@ if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
     `emacs --daemon > /dev/null`
 fi
+
+# auto compile
+if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
+    zcompile ~/.zshrc
+fi
