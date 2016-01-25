@@ -21,3 +21,5 @@ fi
 if [ -e $HOME/.cask/bin ] ;then
     export PATH="$HOME/.cask/bin:$PATH"
 fi
+
+export LESSCHARSET='utf-8'
