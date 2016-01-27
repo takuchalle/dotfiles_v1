@@ -168,3 +168,9 @@ if ps aux | grep emacs | grep -v grep > /dev/null 2>&1; then
 else
     `emacs --daemon > /dev/null`
 fi
+
+#
+# for emoji-cli
+#
+EMOJI_CLI_FILTER="fzf"
+EMOJI_CLI_KEYBIND="^s"
