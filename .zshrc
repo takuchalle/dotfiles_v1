@@ -169,6 +169,12 @@ else
     `emacs --daemon > /dev/null`
 fi
 
+#
+# for emoji-cli
+#
+EMOJI_CLI_FILTER="fzf"
+EMOJI_CLI_KEYBIND="^s"
+
 # auto compile
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
     zcompile ~/.zshrc
