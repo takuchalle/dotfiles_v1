@@ -19,6 +19,5 @@ $ cd $HOME/.dotfiles
 $ make
 ```
 
-## Copyright
-
-TAKUYA Ohashi. All rights reserved.
+## License
+MIT © Takuya OHASHI
