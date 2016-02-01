@@ -3,6 +3,7 @@
 ;; http://d.hatena.ne.jp/a_bicky/20140125/1390647299
 (when (require 'helm-config nil t)
   (helm-mode 1)
+  (define-key global-map (kbd "M-x")     'helm-M-x)
   (define-key global-map (kbd "C-x C-f") 'helm-find-files)
   (define-key global-map (kbd "C-x C-r") 'helm-recentf)
   (define-key global-map (kbd "M-y")     'helm-show-kill-ring)
