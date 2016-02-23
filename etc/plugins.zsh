@@ -3,7 +3,7 @@
 #
 if [ -e $HOME/.zplug/zplug ];then
     source ~/.zplug/zplug
-    zplug "zsh-users/zsh-syntax-highlighting"
+    zplug "zsh-users/zsh-syntax-highlighting", nice:10
     zplug "zsh-users/zsh-history-substring-search"
     zplug "b4b4r07/enhancd", at:v1
     zplug "k4rthik/git-cal", as:command, frozen:1
