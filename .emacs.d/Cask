@@ -47,4 +47,5 @@
 (depends-on "irony")
 (depends-on "company-irony")
 (depends-on "yaml-mode")
+(depends-on "go-mode")
 (depends-on "wanderlust")
