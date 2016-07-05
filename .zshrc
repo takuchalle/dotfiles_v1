@@ -124,6 +124,12 @@ compctl -g '*.dvi' xdvi dvi2ps
 compctl -g '*.ps' gv lpr idraw
 
 #
+# stty seting
+#
+stty start undef
+stty stop undef
+
+#
 # Aliases
 #
 alias less='/usr/bin/less -R'
