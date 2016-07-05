@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015,2016 TAKUYA Ohashi. All rights reserved.
+# Copyright (c) 2015,2016 Takuya OHASHI. All rights reserved.
 #
 if [ -e $HOME/.zplug/zplug ];then
     source ~/.zplug/zplug
