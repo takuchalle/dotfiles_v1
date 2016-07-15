@@ -32,6 +32,7 @@
 (depends-on "highlight-symbol")
 (depends-on "rainbow-delimiters")
 (depends-on "init-loader")
+(depends-on "ninja-mode")
 (depends-on "markdown-mode")
 (depends-on "org")
 (depends-on "epl")
