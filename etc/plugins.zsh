@@ -11,9 +11,9 @@ if [ -e $HOME/.zplug/zplug ];then
     zplug "stedolan/jq", \
 	  from:gh-r, \
 	  as:command, \
-	  rename-to:jq
+	  rename-to:jq, if:"[! [ $OSTYPE == *CYGWIN* ]]"
     zplug "b4b4r07/emoji-cli", \
-	      on:"stedolan/jq"
+	      on:"stedolan/jq", if:"[! [ $OSTYPE == *CYGWIN* ]]"
     zplug "mrowa44/emojify", as:command
     zplug "junegunn/fzf-bin", \
 	  from:gh-r, \
