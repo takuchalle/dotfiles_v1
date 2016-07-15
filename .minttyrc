@@ -19,3 +19,5 @@ BoldCyan=64,255,255
 BoldWhite=255,255,25
 BackgroundColour=0,0,0
 BellType=0
+Locale=C
+Charset=UTF-8
