@@ -18,3 +18,4 @@ BoldMagenta=237,157,185
 BoldCyan=64,255,255
 BoldWhite=255,255,25
 BackgroundColour=0,0,0
+BellType=0
