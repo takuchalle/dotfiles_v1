@@ -48,6 +48,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'nanotech/jellybeans.vim'
 call neobundle#end()
 
 filetype plugin indent on
