@@ -45,3 +45,6 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
