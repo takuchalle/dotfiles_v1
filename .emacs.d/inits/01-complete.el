@@ -1,15 +1,9 @@
-(when (require 'auto-complete nil t)
-  (when (require 'auto-complete-config nil t)
-    (setq ac-auto-show-menu 0.8)
-    (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
-    (ac-config-default)
-    (setq ac-use-menu-map t)
-    )
-  )
+(when (require 'company nil t)
+  (global-company-mode)
+  (setq company-idle-delay 0.2) ; default is 0.5
+  (setq company-minimum-prefix-length 2) ; default is 4
+  (setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
 
-
-(when (require 'company-mode nil t)
-  (global-company-mode +1)
   (set-face-attribute 'company-tooltip nil
 		      :foreground "black" :background "lightgrey")
   (set-face-attribute 'company-tooltip-common nil
@@ -17,11 +11,11 @@
   (set-face-attribute 'company-tooltip-common-selection nil
 		      :foreground "white" :background "steelblue")
   (set-face-attribute 'company-tooltip-selection nil
-		      :foreground "black" :background "steelblue")
+		      :foreground "yellow" :background "steelblue")
   (set-face-attribute 'company-preview-common nil
 		      :background nil :foreground "lightgrey" :underline t)
   (set-face-attribute 'company-scrollbar-fg nil
-		      :background "orange")
+		      :background "yellow")
   (set-face-attribute 'company-scrollbar-bg nil
 		      :background "gray40")
 
