@@ -24,3 +24,6 @@
 	pager = less -R
 [merge]
 	ff = false
+[ghq]
+	root = ~/src
+	root = ~/.go/src
