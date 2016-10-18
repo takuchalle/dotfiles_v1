@@ -37,6 +37,10 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
+noremap <C-a> <Esc>^
+noremap <C-e> <Esc>$
+inoremap <C-a> <Esc>^a
+inoremap <C-e> <Esc>$a
 
 set showmatch
 
