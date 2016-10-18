@@ -39,8 +39,11 @@ nnoremap <down> gj
 nnoremap <up> gk
 noremap <C-a> <Esc>^
 noremap <C-e> <Esc>$
-inoremap <C-a> <Esc>^a
-inoremap <C-e> <Esc>$a
+inoremap <C-a> <Esc>^i
+inoremap <C-e> <Esc>$i
+
+noremap <C-x><C-R> :Unite file_mru<CR> " 
+
 
 set showmatch
 
@@ -62,6 +65,10 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 call neobundle#end()
 
 filetype plugin indent on
