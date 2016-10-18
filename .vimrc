@@ -1,5 +1,9 @@
 " Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
 syntax on
+
+set background=dark
 
 " encoding
 set encoding=utf-8
@@ -21,6 +25,8 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
+
+set laststatus=2
 
 nnoremap <Esc><Esc> :<C-u>set nohlsearch!<CR>
 
@@ -48,10 +54,25 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'tpope/vim-fugitive'
 call neobundle#end()
 
 filetype plugin indent on
 
 NeoBundleCheck
+
+"" Set color
+colorscheme solarized
+
+" set 256 colors for vim
+set t_Co=256
+
+" setting for lightline
+"
+let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ }
 
