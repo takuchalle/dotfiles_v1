@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015, TAKUYA Ohashi. All rights reserved.
+# Copyright (c) 2015, Takuya OHASHI. All rights reserved.
 #
 DOTPATH    := $(PWD)
 CANDIDATES := $(wildcard .??*)
