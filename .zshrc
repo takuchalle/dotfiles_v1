@@ -29,7 +29,7 @@ if [ -e $DOTPATH/etc/plugins.zsh ];then
     source $DOTPATH/etc/plugins.zsh
 fi
 
-if [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # autoload
 autoload -U  run-help
@@ -182,6 +182,18 @@ fi
 #
 EMOJI_CLI_FILTER="fzf"
 EMOJI_CLI_KEYBIND="^s"
+
+fzf-src() {
+    local selected
+    selected="$(ghq list --full-path | fzf --query="$LBUFFER")"
+    if [ -n "$selected" ]; then
+#        BUFFER="builtin cd $selected"
+	cd $selected
+    fi
+    zle reset-prompt
+}
+zle -N fzf-src
+bindkey '^]' fzf-src
 
 # auto compile
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
