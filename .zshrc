@@ -29,6 +29,8 @@ if [ -e $DOTPATH/etc/plugins.zsh ];then
     source $DOTPATH/etc/plugins.zsh
 fi
 
+if [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # autoload
 autoload -U  run-help
 autoload -Uz add-zsh-hook
