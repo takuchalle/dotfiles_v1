@@ -26,4 +26,7 @@ fi
 if [ -e $HOME/.zplug ] ;then
     export PATH="$HOME/.zplug/bin:$PATH"
 fi
+
+export PATH="$HOME/.go/bin:$PATH"
+
 export LESSCHARSET='utf-8'
