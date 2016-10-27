@@ -11,7 +11,7 @@
           '(lambda ()
 	     (setq tab-width 4)
 	     (setq ruby-indent-level tab-width)
-	     (flycheck-mode)))
+	     ))
 
 ;; ruby-electric
 (when (require 'ruby-electric nil t)
