@@ -22,6 +22,11 @@ if [ -e $HOME/.cask/bin ] ;then
     export PATH="$HOME/.cask/bin:$PATH"
 fi
 
+# path to zplug
+if [ -e $HOME/.zplug ] ;then
+    export PATH="$HOME/.zplug/bin:$PATH"
+fi
+
 export PATH="$HOME/.go/bin:$PATH"
 
 export LESSCHARSET='utf-8'
