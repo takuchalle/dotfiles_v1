@@ -85,7 +85,7 @@ export LESS='-R'
 #
 # Prompt
 #
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-chenges true
 zstyle ':vcs_info:*' formats '(%s@%b)'
 function _update_vcs_info_msg() {
