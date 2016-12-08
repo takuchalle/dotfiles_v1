@@ -158,6 +158,12 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias tmux='tmux -2'
 
+alias -g G='| grep'
+alias -g X='| xargs'
+alias -g XG='| xargs grep'
+alias -g S='| sort'
+alias -g W='| grep -c ""'
+
 if is_exists "gomi"; then
     alias rm=gomi
 else
