@@ -33,4 +33,10 @@
     (define-key global-map (kbd "M-g .") 'helm-ag)
     (define-key global-map (kbd "M-g ,") 'helm-ag-pop-stack)
     (define-key global-map (kbd "C-M-s") 'helm-ag-this-file))
+
+  (when (require 'helm-tags nil t)
+    (define-key global-map (kbd "M-.") 'helm-gtags-find-tag)
+    (define-key global-map (kbd "M-*") 'helm-gtags-pop-stack)
+    (define-key global-map (kbd "M-/") 'helm-gtags-find-rtag)
+    )
   )
