@@ -5,7 +5,7 @@
   (defun add-c-mode-conf ()
     (c-set-style "cc-mode")
     (setq indent-tabs-mode t) ; ハードタブ
-    (setq c-basic-offset 8) ;; + のインデント幅を8にする
+    (setq c-basic-offset 4) ;; + のインデント幅を8にする
 
     ;; extern "C" { *** }
     (c-set-offset 'extern-lang-open 0)
