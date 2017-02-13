@@ -1,12 +1,12 @@
 #
 # Copyright (c) 2015,2016 Takuya OHASHI. All rights reserved.
 #
-if [ -e $HOME/.zplug/zplug ];then
-    source ~/.zplug/zplug
+if [ -e $HOME/.zplug/init.zsh ];then
+    source ~/.zplug/init.zsh
     zplug "zsh-users/zsh-syntax-highlighting", nice:10
     zplug "zsh-users/zsh-history-substring-search"
     zplug "zsh-users/zsh-completions"
-    zplug "b4b4r07/enhancd", at:v1
+    zplug "b4b4r07/enhancd", use:init.sh
     zplug "k4rthik/git-cal", as:command, frozen:1
     zplug "stedolan/jq", \
 	  from:gh-r, \
