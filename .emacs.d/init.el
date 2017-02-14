@@ -46,6 +46,7 @@
 (package-install 'helm-c-yasnippet)
 (package-install 'helm-gtags)
 (package-install 'helm-swoop)
+(package-install 'helm-migemo)
 (package-install 'highlight-symbol)
 (package-install 'rainbow-delimiters)
 (package-install 'init-loader)
