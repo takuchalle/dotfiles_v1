@@ -67,3 +67,18 @@
 (when (require 'init-loader nil t)
   (init-loader-load "~/.emacs.d/inits"))
 
+;;
+;; migemo
+;;
+;; How to install
+;; (cygwin) http://keisanbutsuriya.hateblo.jp/entry/2015/02/16/133658
+(when (executable-find "cmigemo")
+  (when (require 'migemo nil t)
+    (setq migemo-command "cmigemo")
+    (setq migemo-options '("-q" "--emacs"))
+    (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+    (setq migemo-user-dictionary nil)
+    (setq migemo-regex-dictionary nil)
+    (setq migemo-coding-system 'utf-8-unix)
+    (load-library "migemo")
+    (migemo-init)))
