@@ -25,6 +25,14 @@ if [ -e $HOME/.zplug/init.zsh ];then
 	  as:command, \
 	  rename-to:fzf, \
 	  use:"*darwin*amd64*", if:"[[ $OSTYPE == *darwin* ]]"
+
+    zplug "jhawthorn/fzy", \
+	  as:command, \
+	  hook-build:'make'
+    
+    zplug "b4b4r07/git-br", \
+	  as:command, \
+	  use:'git-br'
     
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
