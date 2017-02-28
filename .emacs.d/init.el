@@ -22,6 +22,7 @@
 (package-refresh-contents)
 
 (package-install 'bind-key)
+(package-install 'cmake-mode)
 (package-install 'dash)
 (package-install 'drag-stuff)
 (package-install 'exec-path-from-shell)
@@ -83,3 +84,10 @@
     (setq migemo-coding-system 'utf-8-unix)
     (load-library "migemo")
     (migemo-init)))
+
+;;
+;; cmake-mode
+;;
+(when (require 'cmake-mode nil t)
+  (add-hook 'cmake-mode-hook (lambda()
+			       (company-mode))))
