@@ -29,6 +29,7 @@
 (package-install 'exec-path-from-shell)
 (package-install 'expand-region)
 (package-install 'f)
+(package-install 'goto-chg)
 (package-install 'htmlize)
 (package-install 'idle-highlight-mode)
 (package-install 'magit)
@@ -102,3 +103,9 @@
 ;; helm-swoop
 ;;
 (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+
+;;
+;; goto-chg
+;;
+(global-set-key (kbd "<f8>") 'goto-last-change)
+(global-set-key (kbd "<M-f8>") 'goto-last-change-reverse)
