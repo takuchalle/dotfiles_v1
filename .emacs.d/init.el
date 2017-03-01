@@ -21,6 +21,7 @@
 (package-initialize)
 (package-refresh-contents)
 
+(package-install 'ace-isearch)
 (package-install 'bind-key)
 (package-install 'cmake-mode)
 (package-install 'dash)
@@ -91,3 +92,9 @@
 (when (require 'cmake-mode nil t)
   (add-hook 'cmake-mode-hook (lambda()
 			       (company-mode))))
+
+;;
+;; ace-isearch
+;;
+(global-ace-isearch-mode 1)
+
