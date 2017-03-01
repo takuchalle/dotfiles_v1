@@ -98,3 +98,7 @@
 ;;
 (global-ace-isearch-mode 1)
 
+;;
+;; helm-swoop
+;;
+(define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
