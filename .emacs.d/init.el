@@ -21,7 +21,9 @@
 (package-initialize)
 (package-refresh-contents)
 
+(package-install 'ace-isearch)
 (package-install 'bind-key)
+(package-install 'cmake-mode)
 (package-install 'dash)
 (package-install 'drag-stuff)
 (package-install 'exec-path-from-shell)
@@ -83,3 +85,20 @@
     (setq migemo-coding-system 'utf-8-unix)
     (load-library "migemo")
     (migemo-init)))
+
+;;
+;; cmake-mode
+;;
+(when (require 'cmake-mode nil t)
+  (add-hook 'cmake-mode-hook (lambda()
+			       (company-mode))))
+
+;;
+;; ace-isearch
+;;
+(global-ace-isearch-mode 1)
+
+;;
+;; helm-swoop
+;;
+(define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
