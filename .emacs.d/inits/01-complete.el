@@ -1,7 +1,7 @@
 (when (require 'company nil t)
   (global-company-mode)
   (setq company-idle-delay 0.2) ; default is 0.5
-  (setq company-minimum-prefix-length 2) ; default is 4
+  (setq company-minimum-prefix-length 4) ; default is 4
   (setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
 
   (set-face-attribute 'company-tooltip nil
@@ -26,6 +26,9 @@
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (define-key company-search-map (kbd "C-n") 'company-select-next)
   (define-key company-search-map (kbd "C-p") 'company-select-previous)
+
+  ;; disable company-show-doc-buffer
+  (define-key company-active-map (kbd "C-h") nil)
 
   ;; C-sで絞り込む
   (define-key company-active-map (kbd "C-s") 'company-filter-candidates)
