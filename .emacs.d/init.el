@@ -55,6 +55,7 @@
 (package-install 'init-loader)
 (package-install 'ninja-mode)
 (package-install 'markdown-mode)
+(package-install 'mwim)
 (package-install 'epl)
 (package-install 'color-theme)
 (package-install 'color-theme-solarized)
@@ -124,3 +125,9 @@
    '(magit-hash ((t (:foreground "red"))))
    )
   )
+
+;;
+;; mwin
+;; http://emacs.rubikitch.com/mwim/
+(global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line)
+(global-set-key (kbd "C-e") 'mwim-end-of-code-or-line)
