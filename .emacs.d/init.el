@@ -51,7 +51,6 @@
 (package-install 'helm-swoop)
 (package-install 'helm-migemo)
 (package-install 'highlight-symbol)
-(package-install 'rainbow-delimiters)
 (package-install 'init-loader)
 (package-install 'ninja-mode)
 (package-install 'markdown-mode)
