@@ -109,3 +109,18 @@
 ;;
 (global-set-key (kbd "<f8>") 'goto-last-change)
 (global-set-key (kbd "<M-f8>") 'goto-last-change-reverse)
+
+;;
+;; magit
+;; https://magit.vc/
+(when (require 'magit nil t)
+  (global-set-key (kbd "C-x g") 'magit-status)
+
+  (custom-set-faces
+   '(magit-diff-added ((t (:background "black" :foreground "green"))))
+   '(magit-diff-added-highlight ((t (:background "white" :foreground "gold"))))
+   '(magit-diff-removed ((t (:background "black" :foreground "blue"))))
+   '(magit-diff-removed-hightlight ((t (:background "white" :foreground "blue"))))
+   '(magit-hash ((t (:foreground "red"))))
+   )
+  )
