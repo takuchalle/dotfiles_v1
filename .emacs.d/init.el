@@ -134,3 +134,9 @@
 
 ;; hilight current cursor
 (global-hl-line-mode)
+
+;;
+;; smartparens
+;; http://kiririmode.hatenablog.jp/entry/20131231/p1
+(require 'smartparens-config)
+(smartparens-global-mode t)
