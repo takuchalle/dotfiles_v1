@@ -108,9 +108,8 @@
   (recentf-mode 1)
   (require 'recentf-ext))
 
-;; C-t/C-u で別のウィンドウに移動
+;; C-t to switch other window
 (global-set-key "\C-t" 'other-window)
-(global-set-key "\C-u" 'other-window)
 
 ;; 起動時に余計な表示をさせない
 (if (not (<= emacs-major-version 23))
