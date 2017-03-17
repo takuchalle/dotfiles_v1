@@ -1,7 +1,7 @@
 (when (require 'company nil t)
   (global-company-mode)
   (setq company-idle-delay 0.2) ; default is 0.5
-  (setq company-minimum-prefix-length 4) ; default is 4
+  (setq company-minimum-prefix-length 2) ; default is 4
   (setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
 
   (set-face-attribute 'company-tooltip nil
@@ -19,8 +19,6 @@
   (set-face-attribute 'company-scrollbar-bg nil
 		      :background "gray40")
 
-  (global-set-key (kbd "C-M-i") 'company-complete)
-
   ;; C-n, C-pで補完候補を次/前の候補を選択
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
@@ -36,6 +34,5 @@
   ;; TABで候補を設定
   (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
-  ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
-  (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete)
+  (add-hook 'after-init-hook 'global-company-mode)
   )
