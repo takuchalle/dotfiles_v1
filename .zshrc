@@ -187,8 +187,13 @@ fi
 #
 # for emoji-cli
 #
-EMOJI_CLI_FILTER="fzf"
+EMOJI_CLI_FILTER="fzy"
 EMOJI_CLI_KEYBIND="^s"
+
+#
+# for enhancd
+#
+export ENHANCD_FILTER="fzy:fzf:non-existing-filter"
 
 fzf-src() {
     local selected
