@@ -138,13 +138,10 @@ alias less='/usr/bin/less -R'
 
 os_detect
 case "$PLATFORM" in
-    linux)
-	alias ls='ls --color=auto' ;;
-    cygwin)
-	alias ls='ls --color=auto' ;;
     osx)
 	alias ls='ls -G' ;;
     *)
+	alias ls='ls --color=auto' ;;
 esac
 
 alias la='ls -A'

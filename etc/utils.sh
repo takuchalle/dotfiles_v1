@@ -117,3 +117,13 @@ tmuxx() {
 	fi
     fi
 }
+
+os_detect
+if [[ $PLATFORM = "cygwin" ]]; then
+    function pb_copy(){
+	cat - > /dev/clipboard
+    }
+    function pb_paste(){
+	cat /dev/clipboard
+    }
+fi
