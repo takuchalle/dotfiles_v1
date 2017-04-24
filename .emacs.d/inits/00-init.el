@@ -18,9 +18,6 @@
 ;; file名の補完で大文字小文字を区別しない
 (setq completion-ignore-case t)
 
-;; モードラインに時刻を表示する
-(display-time)
-
 ;; 行番号・桁番号を表示される
 (line-number-mode t)
 (column-number-mode t)
@@ -93,9 +90,6 @@
 (setq completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 
-;; magit
-(when (require 'magit nil t))
-
 ;; dsvn
 (autoload 'svn-status "dsvn" "Run `svn status'." t)
 (autoload 'svn-update "dsvn" "Run `svn update'." t)
@@ -114,29 +108,8 @@
   (recentf-mode 1)
   (require 'recentf-ext))
 
-;; C-t/C-u で別のウィンドウに移動
+;; C-t to switch other window
 (global-set-key "\C-t" 'other-window)
-(global-set-key "\C-u" 'other-window)
-
-;;============iswitchb-mode========================================
-;; ;; バッファの切り替えを強化する
-;; (iswitchb-mode 1)
-;; ;;; C-f, C-b, C-n, C-p で候補を切り替えることができるように。
-;; (add-hook 'iswitchb-define-mode-map-hook
-;; 	        (lambda ()
-;; 		  (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
-;; 		  (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)
-;; 		  (define-key iswitchb-mode-map "\C-f" 'iswitchb-next-match)
-;; 		  (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)))
-
-;; ;; バッファ読み込み関数をiswitchb にする
-;; (setq read-buffer-function 'iswitchb-read-buffer)
-;; ;; 部分文字列の代わりに正規表現を使う場合は t を設定する
-;; (setq iswitchb-regexp nil)
-;; ;; 新しいバッファを作成するときにいちいち聞いてこない
-;; (setq iswitchb-prompt-newbuffer nil)
-;;============iswitchb-mode=======================================
-
 
 ;; 起動時に余計な表示をさせない
 (if (not (<= emacs-major-version 23))

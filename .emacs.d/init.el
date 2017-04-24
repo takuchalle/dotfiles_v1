@@ -29,6 +29,7 @@
 (package-install 'exec-path-from-shell)
 (package-install 'expand-region)
 (package-install 'f)
+(package-install 'goto-chg)
 (package-install 'htmlize)
 (package-install 'idle-highlight-mode)
 (package-install 'magit)
@@ -50,10 +51,10 @@
 (package-install 'helm-swoop)
 (package-install 'helm-migemo)
 (package-install 'highlight-symbol)
-(package-install 'rainbow-delimiters)
 (package-install 'init-loader)
 (package-install 'ninja-mode)
 (package-install 'markdown-mode)
+(package-install 'mwim)
 (package-install 'epl)
 (package-install 'color-theme)
 (package-install 'color-theme-solarized)
@@ -96,9 +97,46 @@
 ;;
 ;; ace-isearch
 ;;
-(global-ace-isearch-mode 1)
+;; (global-ace-isearch-mode 1)
 
 ;;
 ;; helm-swoop
 ;;
 (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+
+;;
+;; goto-chg
+;;
+(global-set-key (kbd "<f8>") 'goto-last-change)
+(global-set-key (kbd "<M-f8>") 'goto-last-change-reverse)
+
+;;
+;; magit
+;; https://magit.vc/
+(when (and (>= emacs-major-version 24) (>= emacs-minor-version 4))
+  (when (require 'magit nil t)
+    (global-set-key (kbd "C-x g") 'magit-status)
+    
+    (custom-set-faces
+     '(magit-diff-added ((t (:background "black" :foreground "green"))))
+     '(magit-diff-added-highlight ((t (:background "white" :foreground "gold"))))
+     '(magit-diff-removed ((t (:background "black" :foreground "blue"))))
+     '(magit-diff-removed-hightlight ((t (:background "white" :foreground "blue"))))
+     '(magit-hash ((t (:foreground "red"))))
+     )
+    ))
+
+;;
+;; mwin
+;; http://emacs.rubikitch.com/mwim/
+(global-set-key (kbd "C-a") 'mwim-beginning-of-code-or-line)
+(global-set-key (kbd "C-e") 'mwim-end-of-code-or-line)
+
+;; hilight current cursor
+(global-hl-line-mode)
+
+;;
+;; smartparens
+;; http://kiririmode.hatenablog.jp/entry/20131231/p1
+(require 'smartparens-config)
+(smartparens-global-mode t)

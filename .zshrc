@@ -138,13 +138,10 @@ alias less='/usr/bin/less -R'
 
 os_detect
 case "$PLATFORM" in
-    linux)
-	alias ls='ls --color=auto' ;;
-    cygwin)
-	alias ls='ls --color=auto' ;;
     osx)
 	alias ls='ls -G' ;;
     *)
+	alias ls='ls --color=auto' ;;
 esac
 
 alias la='ls -A'
@@ -163,6 +160,7 @@ alias -g X='| xargs'
 alias -g XG='| xargs grep'
 alias -g S='| sort'
 alias -g W='| grep -c ""'
+alias -g L='| less'
 
 if is_exists "gomi"; then
     alias rm=gomi
@@ -186,8 +184,13 @@ fi
 #
 # for emoji-cli
 #
-EMOJI_CLI_FILTER="fzf"
+EMOJI_CLI_FILTER="fzy"
 EMOJI_CLI_KEYBIND="^s"
+
+#
+# for enhancd
+#
+export ENHANCD_FILTER="fzy:fzf:non-existing-filter"
 
 fzf-src() {
     local selected
