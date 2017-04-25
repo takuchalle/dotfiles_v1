@@ -15,21 +15,9 @@ if [ -e $ZPLUG_HOME/init.zsh ];then
     zplug "b4b4r07/emoji-cli", \
 	      on:"stedolan/jq", if:"[! [ $OSTYPE == *CYGWIN* ]]"
     zplug "mrowa44/emojify", as:command
-    zplug "junegunn/fzf-bin", \
-	  from:gh-r, \
-	  as:command, \
-	  rename-to:fzf, \
-	  use:"*linux*amd64*", if:"[[ $OSTYPE == *linux* ]]"
-    zplug "junegunn/fzf-bin", \
-	  from:gh-r, \
-	  as:command, \
-	  rename-to:fzf, \
-	  use:"*darwin*amd64*", if:"[[ $OSTYPE == *darwin* ]]"
-
     zplug "jhawthorn/fzy", \
 	  as:command, \
 	  hook-build:'make'
-    
     zplug "b4b4r07/git-br", \
 	  as:command, \
 	  use:'git-br'
