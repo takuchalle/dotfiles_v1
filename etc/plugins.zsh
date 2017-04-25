@@ -1,9 +1,9 @@
 #
 # Copyright (c) 2015,2016 Takuya OHASHI. All rights reserved.
 #
-if [ -e $HOME/.zplug/init.zsh ];then
-    source ~/.zplug/init.zsh
-    zplug "zsh-users/zsh-syntax-highlighting", nice:10
+if [ -e $ZPLUG_HOME/init.zsh ];then
+    source $ZPLUG_HOME/init.zsh
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
     zplug "zsh-users/zsh-history-substring-search"
     zplug "zsh-users/zsh-completions"
     zplug "b4b4r07/enhancd", use:init.sh
