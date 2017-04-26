@@ -8,12 +8,6 @@ if [ -e $ZPLUG_HOME/init.zsh ];then
     zplug "zsh-users/zsh-completions"
     zplug "b4b4r07/enhancd", use:init.sh
     zplug "k4rthik/git-cal", as:command, frozen:1
-    zplug "stedolan/jq", \
-	  from:gh-r, \
-	  as:command, \
-	  rename-to:jq, if:"[! [ $OSTYPE == *CYGWIN* ]]"
-    zplug "b4b4r07/emoji-cli", \
-	      on:"stedolan/jq", if:"[! [ $OSTYPE == *CYGWIN* ]]"
     zplug "mrowa44/emojify", as:command
     zplug "jhawthorn/fzy", \
 	  as:command, \
