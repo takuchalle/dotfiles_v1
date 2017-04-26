@@ -192,17 +192,17 @@ EMOJI_CLI_KEYBIND="^s"
 #
 export ENHANCD_FILTER="fzy:fzf:non-existing-filter"
 
-fzf-src() {
+fzy-src() {
     local selected
-    selected="$(ghq list --full-path | fzf --query="$LBUFFER")"
+    selected="$(ghq list --full-path | fzy --query="$LBUFFER")"
     if [ -n "$selected" ]; then
 #        BUFFER="builtin cd $selected"
-	cd $selected
+	builtin cd $selected
     fi
     zle reset-prompt
 }
-zle -N fzf-src
-bindkey '^]' fzf-src
+zle -N fzy-src
+bindkey '^]' fzy-src
 
 # auto compile
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
