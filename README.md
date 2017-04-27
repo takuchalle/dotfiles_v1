@@ -7,7 +7,6 @@ Manage .dotfiles
 ## Requirement
 
 * Emacs
-* Cask
 * zsh
 * tmux
 
