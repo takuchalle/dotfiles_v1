@@ -113,7 +113,8 @@
 ;;
 ;; magit
 ;; https://magit.vc/
-(when (and (>= emacs-major-version 24) (>= emacs-minor-version 4))
+(when (or (and (>= emacs-major-version 24) (>= emacs-minor-version 4))
+	  (>= emacs-major-version 25))
   (when (require 'magit nil t)
     (global-set-key (kbd "C-x g") 'magit-status)
     
