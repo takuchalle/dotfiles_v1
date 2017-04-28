@@ -149,3 +149,6 @@
 (add-hook 'makefile-mode-hook
 	  (function (lambda ()
 		      (fset 'makefile-warn-suspicious-lines 'ignore))))
+
+;; keybind to call Makefile
+(global-set-key (kbd "C-x m") 'compile)
