@@ -141,3 +141,11 @@
 ;; http://kiririmode.hatenablog.jp/entry/20131231/p1
 (require 'smartparens-config)
 (smartparens-global-mode t)
+
+;;
+;; Ignore "Suspicious line XXX. Save anyway"
+;; when save Makefile.
+;;
+(add-hook 'makefile-mode-hook
+	  (function (lambda ()
+		      (fset 'makefile-warn-suspicious-lines 'ignore))))
