@@ -69,6 +69,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'fatih/vim-go'
 call neobundle#end()
 
 filetype plugin indent on

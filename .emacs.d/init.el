@@ -113,7 +113,8 @@
 ;;
 ;; magit
 ;; https://magit.vc/
-(when (and (>= emacs-major-version 24) (>= emacs-minor-version 4))
+(when (or (and (>= emacs-major-version 24) (>= emacs-minor-version 4))
+	  (>= emacs-major-version 25))
   (when (require 'magit nil t)
     (global-set-key (kbd "C-x g") 'magit-status)
     
@@ -140,3 +141,14 @@
 ;; http://kiririmode.hatenablog.jp/entry/20131231/p1
 (require 'smartparens-config)
 (smartparens-global-mode t)
+
+;;
+;; Ignore "Suspicious line XXX. Save anyway"
+;; when save Makefile.
+;;
+(add-hook 'makefile-mode-hook
+	  (function (lambda ()
+		      (fset 'makefile-warn-suspicious-lines 'ignore))))
+
+;; keybind to call Makefile
+(global-set-key (kbd "C-x m") 'compile)

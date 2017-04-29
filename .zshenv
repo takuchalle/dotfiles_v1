@@ -24,6 +24,7 @@ fi
 
 # path to zplug
 if [ -e $HOME/.zplug ] ;then
+    export ZPLUG_HOME="$HOME/.zplug"
     export PATH="$HOME/.zplug/bin:$PATH"
 fi
 

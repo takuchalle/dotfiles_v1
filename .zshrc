@@ -204,6 +204,10 @@ fzy-src() {
 zle -N fzy-src
 bindkey '^]' fzy-src
 
+function killp() {
+    ps axww pid,user,%cpu,%mem,start,time,command | fzy | sed 's/^ *//' | cut -f1 -d' ' | xargs kill -KILL
+}
+
 # auto compile
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
     zcompile ~/.zshrc

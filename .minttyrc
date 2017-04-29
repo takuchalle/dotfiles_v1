@@ -21,3 +21,4 @@ BackgroundColour=0,0,0
 BellType=0
 Locale=C
 Charset=UTF-8
+CursorType=block
