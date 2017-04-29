@@ -17,15 +17,23 @@ if [ -e $HOME/.rbenv/bin ] ;then
     fi
 fi
 
+# path to go/bin
+if [ -e $HOME/go/bin ] ;then
+    export PATH="$HOME/go/bin:$PATH"
+fi
+
 # path to cask
 if [ -e $HOME/.cask/bin ] ;then
     export PATH="$HOME/.cask/bin:$PATH"
 fi
 
 # path to zplug
-if [ -e $HOME/.zplug ] ;then
-    export ZPLUG_HOME="$HOME/.zplug"
-    export PATH="$HOME/.zplug/bin:$PATH"
+if [ -e /usr/local/opt/zplug ] ; then
+    export ZPLUG_HOME=/usr/local/opt/zplug
+    export PATH="$ZPLUG_HOME/bin:$PATH"
+elif [ -e $HOME/.zplug ] ;then
+    export ZPLUG_HOME=$HOME/.zplug
+    export PATH="$ZPLUG_HOME/bin:$PATH"
 fi
 
 export PATH="$HOME/.go/bin:$PATH"
