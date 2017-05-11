@@ -8,6 +8,7 @@ Manage .dotfiles
 
 * Emacs
 * zsh
+* [zplug](https://github.com/zplug/zplug) 
 * tmux
 
 ## How to install
