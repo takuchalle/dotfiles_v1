@@ -2,6 +2,10 @@
 *.o
 *.elc
 
+GTAGS
+GPATH
+GRTAGS
+
 .emacs.d/inits/00-local.el
 .emacs.d/ac-comphist.dat
 .emacs.d/irony/bin/irony-server

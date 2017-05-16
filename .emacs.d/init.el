@@ -152,3 +152,9 @@
 
 ;; keybind to call Makefile
 (global-set-key (kbd "C-x m") 'compile)
+
+;; highlight-symbol
+;; http://emacs.rubikitch.com/highlight-symbol/
+(setq highlight-symbol-idle-delay 1.0)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
