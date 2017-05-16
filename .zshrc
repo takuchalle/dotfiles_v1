@@ -29,6 +29,10 @@ if [ -e $DOTPATH/etc/plugins.zsh ];then
     source $DOTPATH/etc/plugins.zsh
 fi
 
+if [ -e $DOTPATH/bin ];then
+    export PATH=$DOTPATH/bin:$PATH
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # autoload
