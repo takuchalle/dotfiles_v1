@@ -28,6 +28,8 @@
 (package-install 'drag-stuff)
 (package-install 'exec-path-from-shell)
 (package-install 'expand-region)
+(package-install 'emojify)
+(package-install 'emoji-cheat-sheet-plus)
 (package-install 'f)
 (package-install 'goto-chg)
 (package-install 'htmlize)
@@ -158,3 +160,6 @@
 (setq highlight-symbol-idle-delay 1.0)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+
+(custom-set-variables '(emoji-fontset-check-version nil))
+(emoji-fontset-enable "Apple Color Emoji")
