@@ -26,6 +26,7 @@
 (package-install 'cmake-mode)
 (package-install 'dash)
 (package-install 'drag-stuff)
+(package-install 'emojify)
 (package-install 'exec-path-from-shell)
 (package-install 'expand-region)
 (package-install 'emojify)
@@ -161,5 +162,8 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
 
+;;
+;; emojify
+;; https://github.com/iqbalansari/emacs-emojify
 (custom-set-variables '(emoji-fontset-check-version nil))
 (emoji-fontset-enable "Apple Color Emoji")
