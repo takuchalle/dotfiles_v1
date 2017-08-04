@@ -51,7 +51,7 @@ set history=5000
 
 "
 " dein.vm
-"
+" https://github.com/Shougo/dein.vim
 if &compatible
   set nocompatible               " Be iMproved
 endif
