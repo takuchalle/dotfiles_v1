@@ -44,37 +44,57 @@ inoremap <C-e> <Esc>$i
 
 noremap <C-x><C-R> :Unite file_mru<CR> " 
 
-
 set showmatch
 
 set wildmenu
 set history=5000
 
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-        if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
-        echo "install NeoBundle..."
-        :call system("git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
-    endif
+"
+" dein.vm
+"
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'fatih/vim-go'
-call neobundle#end()
+" Required:
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
+" Required:
+if dein#load_state('~/.vim/bundle')
+  call dein#begin('~/.vim/bundle')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.vim/bundle/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('glidenote/memolist.vim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/neocomplete')
+  call dein#add('Shougo/vimfiler')
+  call dein#add('Shougo/neosnippet')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('fatih/vim-go')
+  call dein#add('justmao945/vim-clang')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
 filetype plugin indent on
+syntax enable
 
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
 
 "" Set color
 colorscheme solarized
