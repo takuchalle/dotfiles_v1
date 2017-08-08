@@ -113,3 +113,11 @@ let g:lightline = {
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++1z -stdlib=lib++ --pedantic-errors'
 
+"" keybind for gtags
+map <C-g> :Gtags
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-k> :Gtags -r <C-r><C-w><CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
