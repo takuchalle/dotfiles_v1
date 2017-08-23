@@ -24,6 +24,7 @@
 (package-install 'ace-isearch)
 (package-install 'bind-key)
 (package-install 'cmake-mode)
+(package-install 'clang-format)
 (package-install 'dash)
 (package-install 'drag-stuff)
 (package-install 'emojify)
