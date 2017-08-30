@@ -76,6 +76,12 @@
   (init-loader-load "~/.emacs.d/inits"))
 
 ;;
+;; default tab setting
+;;
+(setq indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+;;
 ;; migemo
 ;;
 ;; How to install
