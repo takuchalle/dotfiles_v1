@@ -53,9 +53,6 @@
 ;;; 行の先頭でC-kを一回押すだけで行全体を消去する
 (setq kill-whole-line t)
 
-;;タブの代わりに半角スペースを使う
-(setq-default tab-width 4 indent-tabs-mode nil)
-
 ;ログの記録行数を増やす
 (setq message-log-max 10000)
 
@@ -115,12 +112,6 @@
 (if (not (<= emacs-major-version 23))
     (setq inhibit-startup-message t)
   (setq inhibit-startup-screen t))
-
-;; TABの表示幅8
-(setq-default tab-width 8)
-;; インデントでタブ文字を使用する
-(setq-default indent-tabs-mode t)
-
 
 (defun count-lines-and-chars ()
   (if mark-active
