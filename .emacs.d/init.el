@@ -109,9 +109,12 @@
 ;;
 (require 'go-mode nil t)
 
-(add-hook `go-mode-hook (lambda()
-			  (setq gofmt-command "goimports")
-			  (add-hook 'before-save-hook 'gofmt-before-save)))
+(add-hook `go-mode-hook
+		  (lambda()
+			(setq indent-tabs-mode t)
+			(setq-default tab-width 4)
+			(setq gofmt-command "goimports")
+			(add-hook 'before-save-hook 'gofmt-before-save)))
 
 ;;
 ;; ace-isearch
