@@ -24,6 +24,7 @@
 (package-install 'ace-isearch)
 (package-install 'bind-key)
 (package-install 'cmake-mode)
+(package-install 'clang-format)
 (package-install 'dash)
 (package-install 'drag-stuff)
 (package-install 'emojify)
@@ -75,6 +76,12 @@
   (init-loader-load "~/.emacs.d/inits"))
 
 ;;
+;; default tab setting
+;;
+(setq indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+;;
 ;; migemo
 ;;
 ;; How to install
@@ -96,6 +103,18 @@
 (when (require 'cmake-mode nil t)
   (add-hook 'cmake-mode-hook (lambda()
 			       (company-mode))))
+
+;;
+;; go-mode
+;;
+(require 'go-mode nil t)
+
+(add-hook `go-mode-hook
+		  (lambda()
+			(setq indent-tabs-mode t)
+			(setq-default tab-width 4)
+			(setq gofmt-command "goimports")
+			(add-hook 'before-save-hook 'gofmt-before-save)))
 
 ;;
 ;; ace-isearch
