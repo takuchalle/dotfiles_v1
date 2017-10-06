@@ -14,9 +14,9 @@ all: update setup deploy install
 help:
 	@echo "make deploy"
 
-setup: 
+setup:
+	./setup.sh
 	@echo '==> Start Emacs setup'
-	@-cd $(EMACSDPATH) && cask install
 	-emacsclient -e '(kill-emacs)' 2> /dev/null
 	emacs --daemon > /dev/null 2> /dev/null
 
