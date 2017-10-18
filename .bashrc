@@ -13,7 +13,7 @@ export GIT_EDITOR="emacsclient -t"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 # rbenv があるときのみ実行
-if [ -x "`which rbenv`" ]; then
+if [ -x "`which rbenv 2> /dev/null`" ]; then
     eval "$(rbenv init -)"
 fi
 

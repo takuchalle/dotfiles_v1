@@ -184,5 +184,6 @@
 ;;
 ;; emojify
 ;; https://github.com/iqbalansari/emacs-emojify
-(custom-set-variables '(emoji-fontset-check-version nil))
-(emoji-fontset-enable "Apple Color Emoji")
+(when (eq system-type 'darwin)
+  (custom-set-variables '(emoji-fontset-check-version nil))
+  (emoji-fontset-enable "Apple Color Emoji"))

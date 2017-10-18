@@ -76,13 +76,6 @@
 ;; C-x C-f の時、現在位置のファイルがデフォルトになる
 (ffap-bindings)
 
-;; ファイルを自動で保存する
-;; (auto-install-from-url "https://raw.github.com/kentaro/auto-save-buffers-enhanced/master/auto-save-buffers-enhanced.el")
-(when (require 'auto-save-buffers-enhanced nil t)
-  (setq auto-save-buffers-enhanced-interval 1)
-  (auto-save-buffers-enhanced t)
-  )
-
 ;; find-file の補完で大文字小文字を区別しない
 (setq completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
