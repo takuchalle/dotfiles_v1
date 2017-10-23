@@ -133,6 +133,11 @@
 (global-set-key (kbd "<M-f8>") 'goto-last-change-reverse)
 
 ;;
+;; undo
+;;
+(global-set-key (kbd "C-/") 'undo)
+
+;;
 ;; magit
 ;; https://magit.vc/
 (when (or (and (>= emacs-major-version 24) (>= emacs-minor-version 4))
