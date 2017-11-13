@@ -46,6 +46,7 @@
 (package-install 's)
 (package-install 'smartparens)
 (package-install 'smex)
+(package-install 'swift-mode)
 (package-install 'use-package)
 (package-install 'yasnippet)
 (package-install 'helm)
